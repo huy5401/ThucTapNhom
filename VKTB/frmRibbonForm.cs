@@ -42,6 +42,14 @@ namespace VKTB
            
     }
 
+        private void btnTinhTrang_ItemClick(object sender, ItemClickEventArgs e)
+        {
 
+        }
+
+        private void BtnVatChat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(QuanLyDanhMuc));
+        }
     }
 }
