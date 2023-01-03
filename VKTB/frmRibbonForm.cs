@@ -51,5 +51,10 @@ namespace VKTB
         {
             OpenForm(typeof(QuanLyDanhMuc));
         }
+
+        private void btnQuanLyCB_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(QLCanBo));
+        }
     }
 }
