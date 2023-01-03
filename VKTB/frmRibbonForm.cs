@@ -42,6 +42,9 @@ namespace VKTB
            
     }
 
+        private void btnTinhTrang_ItemClick(object sender, ItemClickEventArgs e)
+        {
 
+        }
     }
 }
