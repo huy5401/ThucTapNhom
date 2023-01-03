@@ -46,10 +46,5 @@ namespace VKTB
         {
 
         }
-
-        private void BtnVatChat_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            OpenForm(typeof(QuanLyDanhMuc));
-        }
     }
 }
