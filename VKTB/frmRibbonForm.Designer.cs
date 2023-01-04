@@ -64,7 +64,7 @@ namespace VKTB
             this.btnQuanLyLichTruc = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnBanGiaoCa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThongKe = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXemLichTruc = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhapXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
@@ -96,7 +96,6 @@ namespace VKTB
             // 
             // ribbon
             // 
-            this.ribbon.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(26, 24, 26, 24);
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -133,7 +132,7 @@ namespace VKTB
             this.btnQuanLyLichTruc,
             this.barButtonItem5,
             this.btnBanGiaoCa,
-            this.btnThongKe,
+            this.btnXemLichTruc,
             this.barButtonItem9,
             this.btnNhapXuat,
             this.barButtonItem10,
@@ -147,10 +146,9 @@ namespace VKTB
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbon.MaxItemId = 44;
             this.ribbon.Name = "ribbon";
-            this.ribbon.OptionsMenuMinWidth = 283;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2});
-            this.ribbon.Size = new System.Drawing.Size(1215, 158);
+            this.ribbon.Size = new System.Drawing.Size(1417, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -383,13 +381,14 @@ namespace VKTB
             this.btnBanGiaoCa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBanGiaoCa.ImageOptions.LargeImage")));
             this.btnBanGiaoCa.Name = "btnBanGiaoCa";
             // 
-            // btnThongKe
+            // btnXemLichTruc
             // 
-            this.btnThongKe.Caption = "Xem lịch trực";
-            this.btnThongKe.Id = 33;
-            this.btnThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.ImageOptions.Image")));
-            this.btnThongKe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongKe.ImageOptions.LargeImage")));
-            this.btnThongKe.Name = "btnThongKe";
+            this.btnXemLichTruc.Caption = "Xem lịch trực";
+            this.btnXemLichTruc.Id = 33;
+            this.btnXemLichTruc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.ImageOptions.Image")));
+            this.btnXemLichTruc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongKe.ImageOptions.LargeImage")));
+            this.btnXemLichTruc.Name = "btnXemLichTruc";
+            this.btnXemLichTruc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemLichTruc_ItemClick);
             // 
             // barButtonItem9
             // 
@@ -484,7 +483,7 @@ namespace VKTB
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnThongKe, true);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnXemLichTruc, true);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Quản lý lịch trực";
@@ -510,11 +509,11 @@ namespace VKTB
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 575);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 707);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1215, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1417, 30);
             // 
             // documentManager1
             // 
@@ -560,9 +559,9 @@ namespace VKTB
             // 
             // frmRibbonForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1215, 599);
+            this.ClientSize = new System.Drawing.Size(1417, 737);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
@@ -630,7 +629,7 @@ namespace VKTB
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btnBanGiaoCa;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem btnThongKe;
+        private DevExpress.XtraBars.BarButtonItem btnXemLichTruc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem btnNhapXuat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
