@@ -64,7 +64,7 @@ namespace VKTB
             this.btnQuanLyLichTruc = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnBanGiaoCa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThongKe = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXemLichTruc = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhapXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
@@ -133,7 +133,7 @@ namespace VKTB
             this.btnQuanLyLichTruc,
             this.barButtonItem5,
             this.btnBanGiaoCa,
-            this.btnThongKe,
+            this.btnXemLichTruc,
             this.barButtonItem9,
             this.btnNhapXuat,
             this.barButtonItem10,
@@ -383,13 +383,14 @@ namespace VKTB
             this.btnBanGiaoCa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBanGiaoCa.ImageOptions.LargeImage")));
             this.btnBanGiaoCa.Name = "btnBanGiaoCa";
             // 
-            // btnThongKe
+            // btnXemLichTruc
             // 
-            this.btnThongKe.Caption = "Xem lịch trực";
-            this.btnThongKe.Id = 33;
-            this.btnThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.ImageOptions.Image")));
-            this.btnThongKe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongKe.ImageOptions.LargeImage")));
-            this.btnThongKe.Name = "btnThongKe";
+            this.btnXemLichTruc.Caption = "Xem lịch trực";
+            this.btnXemLichTruc.Id = 33;
+            this.btnXemLichTruc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemLichTruc.ImageOptions.Image")));
+            this.btnXemLichTruc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXemLichTruc.ImageOptions.LargeImage")));
+            this.btnXemLichTruc.Name = "btnXemLichTruc";
+            this.btnXemLichTruc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemLichTruc_ItemClick);
             // 
             // barButtonItem9
             // 
@@ -456,6 +457,7 @@ namespace VKTB
             this.barButtonItem19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.Image")));
             this.barButtonItem19.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.LargeImage")));
             this.barButtonItem19.Name = "barButtonItem19";
+            this.barButtonItem19.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem19_ItemClick);
             // 
             // ribbonPage2
             // 
@@ -484,7 +486,7 @@ namespace VKTB
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnThongKe, true);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnXemLichTruc, true);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Quản lý lịch trực";
@@ -630,7 +632,7 @@ namespace VKTB
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btnBanGiaoCa;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem btnThongKe;
+        private DevExpress.XtraBars.BarButtonItem btnXemLichTruc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem btnNhapXuat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;

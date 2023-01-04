@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DAL;
+using DevExpress.Utils.Navigation;
 
 namespace VKTB
 {
@@ -19,20 +20,49 @@ namespace VKTB
             InitializeComponent();
         }
 
-     public static   String MaCB;
+     //public static String MaCB;
 
         private void QuanLyCanBo_Load(object sender, EventArgs e)
+
         {
-            DsCanBo.DataSource = D_QLCanBo.TatCaCanBo("CB01");
+            //string macb = "CB01";string mabm = "BM01";
+            DsCanBo.DataSource = D_QLCanBo.TatCaCanBo(DangNhap.MaCB,DangNhap.MaBM);
         }
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             DataRow hang = gridView1.GetFocusedDataRow();
-            MaCB = hang["MaCB"].ToString();
+            DangNhap.MaCB = hang["MaCB"].ToString();
 
+            DataTable dt=new DataTable();
+            dt = D_QLCanBo.ThongTinCB(DangNhap.MaCB);
+            txtMaCB.Text = dt.Rows[0][0].ToString();
+            txtTenCB.Text = dt.Rows[0][1].ToString();
+            txtChucVu.Text= dt.Rows[0][2].ToString();
+            txtBoMon.Text= dt.Rows[0][3].ToString();
+            txtSDT.Text= dt.Rows[0][4].ToString();
+
+            groupThongTinCB.Enabled= false;
         }
 
+        void loadThongTinCB()
+        {
+            string macb = "CB01"; string mabm = "BM01";
+            DsCanBo.DataSource = D_QLCanBo.TatCaCanBo(macb,mabm);
+        }
 
+        private void btnSuaCB_Click(object sender, EventArgs e)
+        {
+            SuaThongTinCB suatt=new SuaThongTinCB();
+            suatt.ShowDialog();
+            loadThongTinCB();
+        }
+
+        private void btnThemCB_Click(object sender, EventArgs e)
+        {
+            ThemCB themcb=new ThemCB();
+            themcb.ShowDialog();
+            loadThongTinCB();
+        }
     }
 }
