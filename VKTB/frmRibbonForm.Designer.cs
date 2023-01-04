@@ -385,8 +385,8 @@ namespace VKTB
             // 
             this.btnXemLichTruc.Caption = "Xem lịch trực";
             this.btnXemLichTruc.Id = 33;
-            this.btnXemLichTruc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.ImageOptions.Image")));
-            this.btnXemLichTruc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongKe.ImageOptions.LargeImage")));
+            this.btnXemLichTruc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemLichTruc.ImageOptions.Image")));
+            this.btnXemLichTruc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXemLichTruc.ImageOptions.LargeImage")));
             this.btnXemLichTruc.Name = "btnXemLichTruc";
             this.btnXemLichTruc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemLichTruc_ItemClick);
             // 
@@ -415,6 +415,7 @@ namespace VKTB
             this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
             this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
             this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
             // barButtonItem12
             // 
