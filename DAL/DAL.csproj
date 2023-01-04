@@ -42,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dataprovider.cs" />
+    <Compile Include="D_QLSuDung.cs" />
     <Compile Include="D_QuanLyTB.cs" />
+    <Compile Include="D_QLCanBo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="D_QLLichTruc.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
