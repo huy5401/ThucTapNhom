@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -84,11 +88,23 @@
     <Compile Include="QuanLyDanhMuc.designer.cs">
       <DependentUpon>QuanLyDanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaThongTinCB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaThongTinCB.Designer.cs">
+      <DependentUpon>SuaThongTinCB.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemAnh.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThemAnh.designer.cs">
       <DependentUpon>ThemAnh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemCB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemCB.Designer.cs">
+      <DependentUpon>ThemCB.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemDanhMuc.cs">
       <SubType>Form</SubType>
@@ -118,8 +134,14 @@
     <EmbeddedResource Include="QuanLyDanhMuc.resx">
       <DependentUpon>QuanLyDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuaThongTinCB.resx">
+      <DependentUpon>SuaThongTinCB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThemAnh.resx">
       <DependentUpon>ThemAnh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemCB.resx">
+      <DependentUpon>ThemCB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemDanhMuc.resx">
       <DependentUpon>ThemDanhMuc.cs</DependentUpon>
