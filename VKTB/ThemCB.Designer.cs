@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbBoMon = new System.Windows.Forms.ComboBox();
             this.cmbChucVu = new System.Windows.Forms.ComboBox();
             this.btnThemCB = new DevExpress.XtraEditors.SimpleButton();
             this.label10 = new System.Windows.Forms.Label();
@@ -39,16 +38,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtBoMon = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // cmbBoMon
-            // 
-            this.cmbBoMon.FormattingEnabled = true;
-            this.cmbBoMon.Location = new System.Drawing.Point(201, 232);
-            this.cmbBoMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbBoMon.Name = "cmbBoMon";
-            this.cmbBoMon.Size = new System.Drawing.Size(129, 21);
-            this.cmbBoMon.TabIndex = 37;
             // 
             // cmbChucVu
             // 
@@ -138,15 +129,23 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Họ Tên : ";
             // 
+            // txtBoMon
+            // 
+            this.txtBoMon.Location = new System.Drawing.Point(201, 232);
+            this.txtBoMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoMon.Name = "txtBoMon";
+            this.txtBoMon.Size = new System.Drawing.Size(129, 21);
+            this.txtBoMon.TabIndex = 34;
+            // 
             // ThemCB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 472);
-            this.Controls.Add(this.cmbBoMon);
             this.Controls.Add(this.cmbChucVu);
             this.Controls.Add(this.btnThemCB);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtBoMon);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtTenCB);
             this.Controls.Add(this.txtMaCB);
@@ -163,8 +162,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbBoMon;
         private System.Windows.Forms.ComboBox cmbChucVu;
         private DevExpress.XtraEditors.SimpleButton btnThemCB;
         private System.Windows.Forms.Label label10;
@@ -175,5 +172,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtBoMon;
     }
 }
