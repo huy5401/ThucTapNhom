@@ -25,8 +25,8 @@ namespace VKTB
         private void QuanLyCanBo_Load(object sender, EventArgs e)
 
         {
-            string macb = "CB01";
-            DsCanBo.DataSource = D_QLCanBo.TatCaCanBo(macb);
+            string macb = "CB01";string mabm = "BM01";
+            DsCanBo.DataSource = D_QLCanBo.TatCaCanBo(macb,mabm);
         }
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
@@ -47,8 +47,8 @@ namespace VKTB
 
         void loadThongTinCB()
         {
-            string macb = "CB01";
-            DsCanBo.DataSource = D_QLCanBo.TatCaCanBo(macb);
+            string macb = "CB01"; string mabm = "BM01";
+            DsCanBo.DataSource = D_QLCanBo.TatCaCanBo(macb,mabm);
         }
 
         private void btnSuaCB_Click(object sender, EventArgs e)

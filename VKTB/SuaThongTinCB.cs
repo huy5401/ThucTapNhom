@@ -28,26 +28,25 @@ namespace VKTB
             txtMaCB.Text = dt.Rows[0][0].ToString();
             txtTenCB.Text = dt.Rows[0][1].ToString();
             cmbChucVu.Text = dt.Rows[0][2].ToString();
-            cmbBoMon.Text = dt.Rows[0][3].ToString();
+            txtBoMon.Text = dt.Rows[0][3].ToString();
             txtSDT.Text = dt.Rows[0][4].ToString();
 
             txtMaCB.Enabled = false;
+            txtBoMon.Enabled = false;
 
             cmbChucVu.DataSource=D_QLCanBo.ALLChucVu();
             cmbChucVu.DisplayMember = "TenCVu";
             cmbChucVu.ValueMember= "MaCVu";
 
-            cmbBoMon.DataSource=D_QLCanBo.ALLBoMon();
-            cmbBoMon.DisplayMember = "TenBM";
-            cmbBoMon.ValueMember = "MaBM";
         }
 
         private void btnSuaCB_Click(object sender, EventArgs e)
         {
             string macb = "CB01";
-            D_QLCanBo.SuaThongTinCB(macb, txtTenCB.Text, cmbChucVu.SelectedValue.ToString(), cmbBoMon.SelectedValue.ToString(), Int32.Parse(txtSDT.Text));
+            D_QLCanBo.SuaThongTinCB(macb, txtTenCB.Text, cmbChucVu.SelectedValue.ToString(), txtBoMon.Text, Int32.Parse(txtSDT.Text));
             MessageBox.Show("Sửa thông tin thành công");
             this.Close();
         }
+
     }
 }

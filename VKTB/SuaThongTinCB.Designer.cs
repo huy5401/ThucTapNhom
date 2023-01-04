@@ -38,7 +38,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSuaCB = new DevExpress.XtraEditors.SimpleButton();
             this.cmbChucVu = new System.Windows.Forms.ComboBox();
-            this.cmbBoMon = new System.Windows.Forms.ComboBox();
+            this.txtBoMon = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label10
@@ -129,24 +129,23 @@
             this.cmbChucVu.Size = new System.Drawing.Size(129, 21);
             this.cmbChucVu.TabIndex = 27;
             // 
-            // cmbBoMon
+            // txtBoMon
             // 
-            this.cmbBoMon.FormattingEnabled = true;
-            this.cmbBoMon.Location = new System.Drawing.Point(218, 192);
-            this.cmbBoMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbBoMon.Name = "cmbBoMon";
-            this.cmbBoMon.Size = new System.Drawing.Size(129, 21);
-            this.cmbBoMon.TabIndex = 27;
+            this.txtBoMon.Location = new System.Drawing.Point(218, 192);
+            this.txtBoMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoMon.Name = "txtBoMon";
+            this.txtBoMon.Size = new System.Drawing.Size(129, 21);
+            this.txtBoMon.TabIndex = 22;
             // 
             // SuaThongTinCB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 384);
-            this.Controls.Add(this.cmbBoMon);
             this.Controls.Add(this.cmbChucVu);
             this.Controls.Add(this.btnSuaCB);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtBoMon);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtTenCB);
             this.Controls.Add(this.txtMaCB);
@@ -173,6 +172,6 @@
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.SimpleButton btnSuaCB;
         private System.Windows.Forms.ComboBox cmbChucVu;
-        private System.Windows.Forms.ComboBox cmbBoMon;
+        private System.Windows.Forms.TextBox txtBoMon;
     }
 }

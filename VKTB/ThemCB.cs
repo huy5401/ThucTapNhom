@@ -18,21 +18,20 @@ namespace VKTB
         {
             InitializeComponent();
         }
-
+        public string MaBMHienTai = "BM01";
         private void ThemCB_Load(object sender, EventArgs e)
         {
             cmbChucVu.DataSource = D_QLCanBo.ALLChucVu();
             cmbChucVu.DisplayMember = "TenCVu";
             cmbChucVu.ValueMember = "MaCVu";
 
-            cmbBoMon.DataSource = D_QLCanBo.ALLBoMon();
-            cmbBoMon.DisplayMember = "TenBM";
-            cmbBoMon.ValueMember = "MaBM";
+            txtBoMon.Text = MaBMHienTai;
+            txtBoMon.Enabled=false;
         }
 
         private void btnThemCB_Click(object sender, EventArgs e)
         {
-            D_QLCanBo.ThemCB(txtMaCB.Text, txtTenCB.Text, cmbChucVu.SelectedValue.ToString(), cmbBoMon.SelectedValue.ToString(), Int32.Parse(txtSDT.Text));
+            D_QLCanBo.ThemCB(txtMaCB.Text, txtTenCB.Text, cmbChucVu.SelectedValue.ToString(), txtBoMon.Text, Int32.Parse(txtSDT.Text));
             MessageBox.Show("Thêm thành công");
             this.Close();
         }

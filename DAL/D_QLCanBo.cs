@@ -9,13 +9,13 @@ namespace DAL
 {
     public class D_QLCanBo
     {
-        public static DataTable TatCaCanBo(string MaCbHienTai)
+        public static DataTable TatCaCanBo(string MaCbHienTai, string MaBMHienTai)
         {
             string sql = @"SELECT cb.MaCB, cb.TenCB, cv.TenCVu, bm.TenBM, cb.SĐT
                         FROM dbo.CANBO cb
                         JOIN dbo.CHUCVU cv ON cv.MaCVu = cb.MaCVu
                         JOIN dbo.BOMON bm ON bm.MaBM = cb.MaBM
-						WHERE cb.MaCB != '" + MaCbHienTai + "'";
+						WHERE cb.MaBM = '" + MaBMHienTai + "' AND cb.MaCB != '" + MaCbHienTai + "' ";
             return Dataprovider.ExecuteQuery(sql);
         }
 
