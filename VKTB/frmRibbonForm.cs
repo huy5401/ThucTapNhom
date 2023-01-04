@@ -66,5 +66,10 @@ namespace VKTB
         {
             this.Close();
         }
+
+        private void btnXemLichSD_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(QLSuDung));
+        }
     }
 }
