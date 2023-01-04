@@ -48,5 +48,18 @@ namespace DAL
             string sql = @"ThemCB @MaCB , @TenCB , @MaCVu , @MaBM , @SDT";
             Dataprovider.ExecuteNonQuery(sql, new object[] { MaCB, TenCB, MaCVu, MaBM, SDT});
         }
+
+        public static int DangNhap(string TenDangNhap, string MatKhau)
+        {
+            string sql = @"DangNhap @TenDangNhap , @MatKhau";
+            object So = Dataprovider.ExecuteScalar(sql, new object[] { TenDangNhap, MatKhau });
+            return Convert.ToInt32(So);
+        }
+
+        public static DataTable LayALLThongTinCanBo(string TenDangNhap, string Matkhau)
+        {
+            string sql = @"LayALLThongTinCanBo @TenDangNhap , @MatKhau";
+            return Dataprovider.ExecuteQuery(sql, new object[] { TenDangNhap, Matkhau });
+        }
     }
 }

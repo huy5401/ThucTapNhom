@@ -61,5 +61,10 @@ namespace VKTB
         {
             OpenForm(typeof(QLLichTruc));
         }
+
+        private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -22,9 +22,9 @@ namespace VKTB
 
         private void SuaThongTinCB_Load(object sender, EventArgs e)
         {
-            string macb = "CB01";
+            //string macb = "CB01";
             DataTable dt=new DataTable();
-            dt = D_QLCanBo.ThongTinCB(macb);
+            dt = D_QLCanBo.ThongTinCB(DangNhap.MaCB);
             txtMaCB.Text = dt.Rows[0][0].ToString();
             txtTenCB.Text = dt.Rows[0][1].ToString();
             cmbChucVu.Text = dt.Rows[0][2].ToString();
@@ -42,8 +42,8 @@ namespace VKTB
 
         private void btnSuaCB_Click(object sender, EventArgs e)
         {
-            string macb = "CB01";
-            D_QLCanBo.SuaThongTinCB(macb, txtTenCB.Text, cmbChucVu.SelectedValue.ToString(), txtBoMon.Text, Int32.Parse(txtSDT.Text));
+            //string macb = "CB01";
+            D_QLCanBo.SuaThongTinCB(DangNhap.MaBM, txtTenCB.Text, cmbChucVu.SelectedValue.ToString(), txtBoMon.Text, Int32.Parse(txtSDT.Text));
             MessageBox.Show("Sửa thông tin thành công");
             this.Close();
         }
