@@ -61,6 +61,7 @@ namespace VKTB
             this.label6 = new System.Windows.Forms.Label();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DsLichTruc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupCBTruc.SuspendLayout();
@@ -88,7 +89,8 @@ namespace VKTB
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
-            this.gridColumn7});
+            this.gridColumn7,
+            this.gridColumn8});
             this.gridView1.GridControl = this.DsLichTruc;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -380,6 +382,16 @@ namespace VKTB
             this.label5.TabIndex = 19;
             this.label5.Text = "Ghi Chú : ";
             // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Phòng Trực";
+            this.gridColumn8.FieldName = "MaPhong";
+            this.gridColumn8.MinWidth = 25;
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.Width = 94;
+            // 
             // QLLichTruc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -441,5 +453,6 @@ namespace VKTB
         private System.Windows.Forms.TextBox txtGhiChu;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private System.Windows.Forms.Label label5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
     }
 }
