@@ -74,6 +74,12 @@
     <Compile Include="frmRibbonForm.Designer.cs">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThayDoiTTTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThayDoiTTTB.designer.cs">
+      <DependentUpon>ThayDoiTTTB.cs</DependentUpon>
+    </Compile>
     <Compile Include="LenLichTruc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <Compile Include="QuanLyDanhMuc.designer.cs">
       <DependentUpon>QuanLyDanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyTB.designer.cs">
+      <DependentUpon>QuanLyTB.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuaThongTinCB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +148,9 @@
     <EmbeddedResource Include="frmRibbonForm.resx">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThayDoiTTTB.resx">
+      <DependentUpon>ThayDoiTTTB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LenLichTruc.resx">
       <DependentUpon>LenLichTruc.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDanhMuc.resx">
       <DependentUpon>QuanLyDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyTB.resx">
+      <DependentUpon>QuanLyTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuaThongTinCB.resx">
       <DependentUpon>SuaThongTinCB.cs</DependentUpon>
