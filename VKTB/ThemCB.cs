@@ -18,14 +18,14 @@ namespace VKTB
         {
             InitializeComponent();
         }
-        public string MaBMHienTai = "BM01";
+        //public string MaBMHienTai = "BM01";
         private void ThemCB_Load(object sender, EventArgs e)
         {
             cmbChucVu.DataSource = D_QLCanBo.ALLChucVu();
             cmbChucVu.DisplayMember = "TenCVu";
             cmbChucVu.ValueMember = "MaCVu";
 
-            txtBoMon.Text = MaBMHienTai;
+            txtBoMon.Text = DangNhap.MaBM;
             txtBoMon.Enabled=false;
         }
 
