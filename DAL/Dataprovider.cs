@@ -11,7 +11,7 @@ namespace DAL
     public class Dataprovider
     {
 
-        static string cnstr = @"Data Source=.;Initial Catalog=QLPTN;Integrated Security=True";
+        static string cnstr = @"Data Source=QUANGHUY\SQLEXPRESS;Initial Catalog=QLPTN;Integrated Security=True";
         static SqlConnection cn;
         public static DataTable ExecuteQuery(string query, object[] parameter = null) // phương thức này trả về 1 bảng
         {
@@ -22,7 +22,7 @@ namespace DAL
                 cn.Open();
             }
             SqlCommand cmd = new SqlCommand(query, cn);
-            if (parameter != null)
+            if (parameter != null) 
             {
                 string[] listPara = query.Split(' ');
                 int i = 0;
