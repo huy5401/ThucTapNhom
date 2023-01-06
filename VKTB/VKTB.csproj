@@ -86,7 +86,7 @@
     </Compile>
     <Compile Include="QuanLyTK_CBBM.designer.cs">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
-
+	</Compile>
     <Compile Include="TaoTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,7 +180,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyTK_CBBM.resx">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
-
+	</EmbeddedResource>
     <EmbeddedResource Include="TaoTaiKhoan.resx">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
 
