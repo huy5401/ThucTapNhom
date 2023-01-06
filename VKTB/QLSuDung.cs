@@ -29,23 +29,22 @@ namespace VKTB
             btnXoa.Enabled = false;
             btnXacNhan.Enabled = false;
             txt_MaSD.Enabled = false;
-            txt_CBPT.Enabled = false;
+            cb_CBPT.Enabled = false;
             txt_NoiDung.Enabled = false;
             cb_CaSD.Enabled = false;
             cb_edit_Phong.Enabled = false;
             txt_MaSD.Text = "";
-            txt_CBPT.Text = "";
             txt_NoiDung.Text = "";
             cb_CaSD.Text = "";
             cb_edit_Phong.Text = "";
+            cb_CBPT.Text = "";
         }
 
         private void QLSuDung_Load(object sender, EventArgs e)
         {
             //string current_date = NgaySD.Text;
-            string current_date = "12-12-2022";
-            string maPhong = cb_Phong.Text;
-            LichSD.DataSource = D_QLSuDung.HienThiLichSD(current_date, maPhong);
+            
+            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text);
             init();
         }
         
@@ -56,6 +55,8 @@ namespace VKTB
         private void Load_Phong()
         {
             DataTable dt = new DataTable();
+            
+            // fix cứng bộ môn
             dt = D_QLSuDung.LayDSPhong("BM01");
             foreach (DataRow row in dt.Rows)
             {
@@ -63,7 +64,28 @@ namespace VKTB
             }
             cb_Phong.SelectedIndex = 0;
         }
-
+        private void Load_CaSD()
+        {
+            cb_CaSD.Properties.Items.Clear();
+            DataTable dt = new DataTable();
+            dt = D_QLSuDung.LayDSCaChuaSD(NgaySD.Text, cb_Phong.Text);
+            foreach (DataRow row in dt.Rows)
+            {
+                cb_CaSD.Properties.Items.Add(row["MaCa"]);
+            }
+            cb_CaSD.SelectedIndex = 0;
+        }
+        public void load_cbpt()
+        {
+            cb_CBPT.Properties.Items.Clear();
+            DataTable dt = new DataTable();
+            dt = D_QLSuDung.LayDSCbptChuaSD(NgaySD.Text, cb_CaSD.Text);
+            foreach (DataRow row in dt.Rows)
+            {
+                cb_CBPT.Properties.Items.Add(row["MaCB"] + " - " + row["TenCB"]);
+            }
+            cb_CBPT.SelectedIndex = 0;
+        }
         private void NgaySD_EditValueChanged(object sender, EventArgs e)
         {
             LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text);
@@ -80,7 +102,7 @@ namespace VKTB
         {
             DataRow row = gridView1.GetFocusedDataRow();
             txt_MaSD.Text = row["MaSD"].ToString();
-            txt_CBPT.Text = row["CBPTrach"].ToString();
+            cb_CBPT.Text = row["CBPTrach"].ToString() + "-" + row["TenCB"].ToString();
             txt_NoiDung.Text = row["NoiDungSD"].ToString();
             cb_CaSD.Text = row["CaSD"].ToString();
             cb_CaSD.SelectedText = row["CaSD"].ToString();
@@ -98,27 +120,30 @@ namespace VKTB
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            txt_CBPT.Enabled = true;
+            cb_CBPT.Enabled = true;
             txt_NoiDung.Enabled = true;
             cb_CaSD.Enabled = true;
             cb_edit_Phong.Enabled = true;
             btnXacNhan.Enabled = true;
-            btnHuy.Enabled = true;
+            btnHuy.Visible = true;
+            Load_CaSD();
+            load_cbpt();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            
             init();
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(txt_CBPT.Text);
-            D_QLSuDung.SualichSD(txt_MaSD.Text, cb_CaSD.Text, cb_edit_Phong.Text, txt_NoiDung.Text,txt_CBPT.Text);
+            string macbpt = cb_CBPT.Text.Split('-')[0];
+            D_QLSuDung.SualichSD(txt_MaSD.Text, cb_CaSD.Text, cb_edit_Phong.Text, txt_NoiDung.Text,macbpt);
             MessageBox.Show("Sửa lịch sử dụng thành công");
-            string current_date = "12-12-2022";
-            string maPhong = cb_Phong.Text;
-            LichSD.DataSource = D_QLSuDung.HienThiLichSD(current_date, maPhong);
+
+            // fix cứng current date
+            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text);
             init();
         }
 
@@ -132,6 +157,11 @@ namespace VKTB
                 D_QLSuDung.XoaLichSD(txt_MaSD.Text);
                 MessageBox.Show("Xóa lịch sử dụng thành công");
             }
+        }
+
+        private void cb_CaSD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            load_cbpt();
         }
     }
 }

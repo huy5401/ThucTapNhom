@@ -152,14 +152,14 @@ namespace VKTB
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(977, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Bộ Môn : ";
+            this.label1.Text = "Bộ Môn ";
             // 
             // cmbCanBoTruc
             // 
             this.cmbCanBoTruc.FormattingEnabled = true;
-            this.cmbCanBoTruc.Location = new System.Drawing.Point(619, 92);
+            this.cmbCanBoTruc.Location = new System.Drawing.Point(653, 91);
             this.cmbCanBoTruc.Name = "cmbCanBoTruc";
             this.cmbCanBoTruc.Size = new System.Drawing.Size(180, 24);
             this.cmbCanBoTruc.TabIndex = 19;
@@ -175,7 +175,7 @@ namespace VKTB
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(511, 94);
+            this.label3.Location = new System.Drawing.Point(517, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 17);
             this.label3.TabIndex = 21;
@@ -184,7 +184,7 @@ namespace VKTB
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(941, 94);
+            this.label5.Location = new System.Drawing.Point(950, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 17);
             this.label5.TabIndex = 22;
@@ -192,9 +192,9 @@ namespace VKTB
             // 
             // btnThemLichTruc
             // 
-            this.btnThemLichTruc.Location = new System.Drawing.Point(831, 151);
+            this.btnThemLichTruc.Location = new System.Drawing.Point(1122, 160);
             this.btnThemLichTruc.Name = "btnThemLichTruc";
-            this.btnThemLichTruc.Size = new System.Drawing.Size(112, 63);
+            this.btnThemLichTruc.Size = new System.Drawing.Size(112, 41);
             this.btnThemLichTruc.TabIndex = 23;
             this.btnThemLichTruc.Text = "Thêm Lịch Trực";
             this.btnThemLichTruc.Click += new System.EventHandler(this.btnThemLichTruc_Click);
