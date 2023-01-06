@@ -424,13 +424,14 @@ namespace VKTB
             this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
             this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
             this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
             // btnXemLichSD
             // 
             this.btnXemLichSD.Caption = "Xem lịch sử dụng";
             this.btnXemLichSD.Id = 40;
-            this.btnXemLichSD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
-            this.btnXemLichSD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
+            this.btnXemLichSD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemLichSD.ImageOptions.Image")));
+            this.btnXemLichSD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXemLichSD.ImageOptions.LargeImage")));
             this.btnXemLichSD.Name = "btnXemLichSD";
             this.btnXemLichSD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemLichSD_ItemClick);
             // 

@@ -76,5 +76,10 @@ namespace VKTB
         {
             OpenForm(typeof(QLSuDung));
         }
+
+        private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(LenLichSD));
+        }
     }
 }
