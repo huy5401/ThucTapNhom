@@ -9,14 +9,15 @@ namespace DAL
 {
   public class D_QLLichTruc
     {
-        public static DataTable TatCaLichTruc()
+        public static DataTable TatCaLichTruc(string MaBm)
         {
          
             string sql = @"SELECT  ct.MaCT , FORMAT (ct.TGTruc,'dd/MM/yyyy') AS 'TGTruc',ct.MaCB,iIF((ct.GhiChu IS NULL) , N'Không có vấn đề',ct.GhiChu )AS 'GhiChu',
 iIF((ct.TGTruc < CAST(GETDATE() AS Date) ) , N'Đã Thực Hiện',IIF(ct.TGTruc > CAST(GETDATE() AS Date)  ,N'Chưa Thực Hiện',N'Đang Thực Hiện')) 
 AS 'TrangThai',bm.TenBM, ct.MaPhong,iIF((ct.MaCBNBG IS NULL) , N'',ct.MaCBNBG )AS 'MaCBNBG',ct.MaPhong
 FROM dbo.CATRUC ct JOIN dbo.CANBO cb ON cb.MaCB = ct.MaCB 
-JOIN dbo.BOMON bm ON bm.MaBM = cb.MaBM";
+JOIN dbo.BOMON bm ON bm.MaBM = cb.MaBM
+WHERE bm.MaBM = '"+MaBm+"'";
             return Dataprovider.ExecuteQuery(sql);
         }
         public static DataTable ThongTinCanBo(string MaCb)
@@ -48,13 +49,14 @@ WHERE cb.MaCB = '"+MaCb+"'";
             string sql = @"ThemVaoBangCaTruc @MaCaTruc , @TG , @MaCbTruc , @MaPhong";
             Dataprovider.ExecuteNonQuery(sql, new object[] { MaCaTruc, TG, MaCbTruc ,MaPhong});
         }
-        public static DataTable LichTruc()
+        public static DataTable LichTruc(string MaBm)
         {
 
-            string sql = @"SELECT  ct.MaCT , FORMAT (ct.TGTruc,'dd/MM/yyyy') AS 'TGTruc',cb.TenCB AS'MaCB',iIF((ct.TGTruc < CAST(GETDATE() AS Date) ) , N'Đã Thực Hiện',IIF(ct.TGTruc > CAST(GETDATE() AS Date)  ,N'Chưa Thực Hiện',N'Đang Thực Hiện')) 
+      string sql = @"SELECT  ct.MaCT , FORMAT (ct.TGTruc,'dd/MM/yyyy') AS 'TGTruc',cb.TenCB AS'MaCB',iIF((ct.TGTruc < CAST(GETDATE() AS Date) ) , N'Đã Thực Hiện',IIF(ct.TGTruc > CAST(GETDATE() AS Date)  ,N'Chưa Thực Hiện',N'Đang Thực Hiện')) 
 AS 'TrangThai',bm.TenBM, ct.MaPhong
 FROM dbo.CATRUC ct JOIN dbo.CANBO cb ON cb.MaCB = ct.MaCB 
-JOIN dbo.BOMON bm ON bm.MaBM = cb.MaBM";
+JOIN dbo.BOMON bm ON bm.MaBM = cb.MaBM
+WHERE bm.MaBM = '"+MaBm+"'";
             return Dataprovider.ExecuteQuery(sql);
         }
         public static int KiemTraSuaLichTruc(string MaCt, int MaPhong, string MaCb, DateTime TG)
@@ -64,5 +66,30 @@ JOIN dbo.BOMON bm ON bm.MaBM = cb.MaBM";
             object DemSoLuong = Dataprovider.ExecuteScalar(sql, new object[] { MaCt, MaPhong, MaCb, TG });
             return Convert.ToInt32(DemSoLuong);
         }
+        public static DataTable CanBoThuocBoMon(string MaBm)
+        {
+            string sql = @"SELECT cb.TenCB, cb.MaCB
+  FROM dbo.CANBO cb JOIN dbo.BOMON bm ON bm.MaBM = cb.MaBM
+  WHERE bm.MaBM = '"+MaBm+"'";
+            return Dataprovider.ExecuteQuery(sql);
+        }
+        public static DataTable MaPhongThuocBoMon(string MaBm)
+        {
+            string sql = @" SELECT ptn.MaPhong
+ FROM dbo.PHONGTHINGHIEM ptn JOIN dbo.BOMON bm ON bm.MaBM = ptn.MaBM 
+ WHERE bm.MaBM = '"+MaBm+"'";
+            return Dataprovider.ExecuteQuery(sql);
+        }
+        public static void CapNhatNgay(string MaCbTruc,int MaPhong,  DateTime NgayTruc, string MaCaTruc)
+        {
+            string sql = @"CapNhatNgay @MaCbTruc , @MaPhong , @NgayTruc , @MaCaTruc";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { MaCbTruc, MaPhong, NgayTruc, MaCaTruc });
+        }
+        public static void KhongCapNhatNgay(string MaCbTruc, int MaPhong, string GhiChu, string MaCaTruc)
+        {
+            string sql = @"KhongCapNhatNgay @MaCbTruc , @MaPhong , @GhiChu , @MaCaTruc";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { MaCbTruc, MaPhong, GhiChu, MaCaTruc });
+        }
+
     }
 }
