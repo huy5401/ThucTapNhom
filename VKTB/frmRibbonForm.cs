@@ -91,5 +91,10 @@ namespace VKTB
         {
             OpenForm(typeof(QuanLyTK_CBBM));
         }
+
+        private void barButtonItem15_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(TaoTaiKhoan));
+        }
     }
 }
