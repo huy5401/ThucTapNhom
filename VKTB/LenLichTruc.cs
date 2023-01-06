@@ -39,7 +39,7 @@ namespace VKTB
         }
         void LoadDsLichTruc()
         {
-            DsLichTruc.DataSource = D_QLLichTruc.LichTruc();
+            DsLichTruc.DataSource = D_QLLichTruc.LichTruc(MaBm);
         }
         void LoadCanBoTruc()
         {

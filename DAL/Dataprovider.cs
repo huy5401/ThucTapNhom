@@ -11,7 +11,13 @@ namespace DAL
     public class Dataprovider
     {
 
-        static string cnstr = @"Data Source=.;Initial Catalog=QLPTN;Integrated Security=True";
+
+       
+
+        static string cnstr = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLPTN;Integrated Security=True";
+   
+
+
         static SqlConnection cn;
         public static DataTable ExecuteQuery(string query, object[] parameter = null) // phương thức này trả về 1 bảng
         {
@@ -64,47 +70,7 @@ namespace DAL
                         i++;
                     }
                 }
-            }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            }  
             kq = command.ExecuteNonQuery();
             cn.Close();
             return kq;

@@ -74,6 +74,7 @@
     <Compile Include="frmRibbonForm.Designer.cs">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </Compile>
+
     <Compile Include="NhapTB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +86,13 @@
     </Compile>
     <Compile Include="QuanLyTK_CBBM.designer.cs">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
+
+    <Compile Include="TaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoTaiKhoan.Designer.cs">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
+
     </Compile>
     <Compile Include="ThayDoiTTTB.cs">
       <SubType>Form</SubType>
@@ -154,17 +162,28 @@
     <Compile Include="ThemDanhMuc.designer.cs">
       <DependentUpon>ThemDanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemTK.Designer.cs">
+      <DependentUpon>ThemTK.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRibbonForm.resx">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="NhapTB.resx">
       <DependentUpon>NhapTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyTK_CBBM.resx">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
+
+    <EmbeddedResource Include="TaoTaiKhoan.resx">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="ThayDoiTTTB.resx">
       <DependentUpon>ThayDoiTTTB.cs</DependentUpon>
@@ -208,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemDanhMuc.resx">
       <DependentUpon>ThemDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemTK.resx">
+      <DependentUpon>ThemTK.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
