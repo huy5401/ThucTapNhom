@@ -290,8 +290,6 @@ namespace VKTB
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsColumn.AllowFocus = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
             this.gridColumn5.Width = 94;
             // 
             // LenLichTruc
