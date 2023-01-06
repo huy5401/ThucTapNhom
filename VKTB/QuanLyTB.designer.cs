@@ -61,8 +61,7 @@ namespace VKTB
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.btnNhap = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXuat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThanhLy = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.DsVuKhi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupHVSDVK.SuspendLayout();
@@ -395,25 +394,15 @@ namespace VKTB
             this.label.TabIndex = 9;
             this.label.Text = "Nhà cung cấp : ";
             // 
-            // btnNhap
+            // btnThanhLy
             // 
-            this.btnNhap.Enabled = false;
-            this.btnNhap.Location = new System.Drawing.Point(722, 683);
-            this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(150, 48);
-            this.btnNhap.TabIndex = 23;
-            this.btnNhap.Text = "Nhập Kho";
-            this.btnNhap.Click += new System.EventHandler(this.btnNhapKho_Click);
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.Enabled = false;
-            this.btnXuat.Location = new System.Drawing.Point(965, 683);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(150, 48);
-            this.btnXuat.TabIndex = 24;
-            this.btnXuat.Text = "Xuất Kho";
-            this.btnXuat.Click += new System.EventHandler(this.btnXuatKho_Click);
+            this.btnThanhLy.Enabled = false;
+            this.btnThanhLy.Location = new System.Drawing.Point(905, 683);
+            this.btnThanhLy.Name = "btnThanhLy";
+            this.btnThanhLy.Size = new System.Drawing.Size(150, 48);
+            this.btnThanhLy.TabIndex = 24;
+            this.btnThanhLy.Text = "Thanh lý";
+            this.btnThanhLy.Click += new System.EventHandler(this.btnThanhLy_Click);
             // 
             // QuanLyTB
             // 
@@ -423,8 +412,7 @@ namespace VKTB
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1848, 766);
-            this.Controls.Add(this.btnXuat);
-            this.Controls.Add(this.btnNhap);
+            this.Controls.Add(this.btnThanhLy);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.Anh);
@@ -480,8 +468,7 @@ namespace VKTB
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label;
-        private DevExpress.XtraEditors.SimpleButton btnNhap;
-        private DevExpress.XtraEditors.SimpleButton btnXuat;
+        private DevExpress.XtraEditors.SimpleButton btnThanhLy;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txt_ghichu;
         private System.Windows.Forms.Label label10;

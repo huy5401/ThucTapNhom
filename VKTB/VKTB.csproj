@@ -74,6 +74,18 @@
     <Compile Include="frmRibbonForm.Designer.cs">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhapTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhapTB.designer.cs">
+      <DependentUpon>NhapTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyTK_CBBM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyTK_CBBM.designer.cs">
+      <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
+    </Compile>
     <Compile Include="LenLichSD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRibbonForm.resx">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhapTB.resx">
+      <DependentUpon>NhapTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyTK_CBBM.resx">
+      <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LenLichSD.resx">
       <DependentUpon>LenLichSD.cs</DependentUpon>
