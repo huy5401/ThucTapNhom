@@ -14,7 +14,7 @@ namespace DAL
 
        
 
-        static string cnstr = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLPTN;Integrated Security=True";
+        static string cnstr = @"Data Source=.;Initial Catalog=QLPTN;Integrated Security=True";
    
 
 
