@@ -39,6 +39,13 @@ namespace DAL
             return Dataprovider.ExecuteQuery(sql);
         }
 
+        public static DataTable ALLQuyen()
+        {
+            string sql = @"SELECT DISTINCT Quyen
+                        FROM TAIKHOAN";
+            return Dataprovider.ExecuteQuery(sql);
+        }
+
         public static void SuaThongTinCB(string MaCB, string TenCB, string MaCVu, string MaBM, int SDT) {
             string sql = @"SuaThongTinCB @MaCB , @TenCB , @MaCVu , @MaBM , @SDT";
             Dataprovider.ExecuteNonQuery(sql, new object[] { MaCB, TenCB, MaCVu, MaBM, SDT});
@@ -60,6 +67,23 @@ namespace DAL
         {
             string sql = @"LayALLThongTinCanBo @TenDangNhap , @MatKhau";
             return Dataprovider.ExecuteQuery(sql, new object[] { TenDangNhap, Matkhau });
+        }
+
+        public static DataTable ThongTinTaiKhoan(string MaBM)
+        {
+            string sql = @"ThongTinTaiKhoan @MaBM";
+            return Dataprovider.ExecuteQuery(sql, new object[] { MaBM });
+        }
+
+        public static DataTable ALLMaCB_TaoTK(string MaBM)
+        {
+            string sql = @"ALLMaCB_TaoTK @MaBM";
+            return Dataprovider.ExecuteQuery(sql, new object[] { MaBM });
+        }
+
+        public static void ThemTK(string MaTK, string MaCB, string TenTK, string MatKhau, string Quyen) {
+            string sql = @"ThemTK @MaTK , @MaCB , @TenTK , @MatKhau , @Quyen";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { MaTK, MaCB, TenTK, MatKhau, Quyen });
         }
     }
 }
