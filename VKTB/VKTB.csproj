@@ -92,7 +92,6 @@
     <Compile Include="LenLichSD.Designer.cs">
       <DependentUpon>LenLichSD.cs</DependentUpon>
     </Compile>
-	</Compile>
     <Compile Include="TaoTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,7 +187,6 @@
     <EmbeddedResource Include="LenLichSD.resx">
       <DependentUpon>LenLichSD.cs</DependentUpon>
     </EmbeddedResource>
-	</EmbeddedResource>
     <EmbeddedResource Include="TaoTaiKhoan.resx">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>

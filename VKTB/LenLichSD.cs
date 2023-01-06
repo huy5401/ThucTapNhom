@@ -69,7 +69,6 @@ namespace VKTB
         private void cb_CaSD_SelectedIndexChanged(object sender, EventArgs e)
         {
             Load_Phong();
-            Load_CaSD();
             load_cbpt();
         }
 
@@ -78,6 +77,9 @@ namespace VKTB
             string macbpt = cb_CBPT.Text.Split('-')[0];
             D_QLSuDung.ThemLichSD(NgaySD.Text, cb_CaSD.Text,cb_Phong.Text , macbpt, txt_NoiDung.Text);
             MessageBox.Show("Thêm lịch sử dụng thành công");
+            Load_Phong();
+            load_cbpt();
+            txt_NoiDung.Text = "";
         }
     }
 }

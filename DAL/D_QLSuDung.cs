@@ -10,6 +10,7 @@ namespace DAL
     {
         public static DataTable HienThiLichSD(string date, string MaPhong)
         {
+            // fix bộ môn
             string sql = @"select MaSD, CaSD, SUDUNG.MaPhong, NoiDungSD, CBPTrach, CANBO.TenCB from SUDUNG join CANBO on SUDUNG.CBPTrach = CANBO.MaCB join PHONGTHINGHIEM on PHONGTHINGHIEM.MaPhong = SUDUNG.MaPhong join BOMON on PHONGTHINGHIEM.MaBM = BOMON.MaBM where NgaySD = '"+date+"' and SUDUNG.MaPhong = '"+MaPhong+"' and BOMON.MaBM = 'BM01'";
             return Dataprovider.ExecuteQuery(sql);
         }
