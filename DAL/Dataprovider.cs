@@ -70,7 +70,7 @@ namespace DAL
                         i++;
                     }
                 }
-            }  
+            }
             kq = command.ExecuteNonQuery();
             cn.Close();
             return kq;
