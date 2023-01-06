@@ -44,7 +44,7 @@ namespace VKTB
 
         private void btnTinhTrang_ItemClick(object sender, ItemClickEventArgs e)
         {
-            OpenForm(typeof(QuanLyTB));
+            OpenForm(typeof(QuanLyTB)); 
         }
 
         private void BtnVatChat_ItemClick(object sender, ItemClickEventArgs e)
@@ -75,6 +75,16 @@ namespace VKTB
         private void btnXemLichSD_ItemClick(object sender, ItemClickEventArgs e)
         {
             OpenForm(typeof(QLSuDung));
+        }
+
+        private void btnViPham_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(NhapTB));
+        }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(QuanLyTK_CBBM));
         }
     }
 }

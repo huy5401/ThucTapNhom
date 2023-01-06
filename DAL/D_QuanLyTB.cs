@@ -66,6 +66,12 @@ namespace DAL
             return Dataprovider.ExecuteQuery(sql);
         }
 
+        public static void ThanhLyTB(string maTB)
+        {
+            string sql = "delete from THIETBI where MaTB = '" + maTB + "'";
+            Dataprovider.ExecuteQuery(sql);
+        }
+
 
     }
 }

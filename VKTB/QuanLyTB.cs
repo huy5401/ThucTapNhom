@@ -17,6 +17,9 @@ namespace VKTB
     {
         public static string MaTB;
         public static string TenTB;
+        public static string GhiChu;
+        public static string TinhTrang;
+        public static DataTable dt1 = new DataTable();
         public QuanLyTB()
         {
             InitializeComponent();
@@ -54,7 +57,7 @@ namespace VKTB
         {
             DataRow hang = gridView1.GetFocusedDataRow();
             string MaTB = hang["MaTB"].ToString();
-            DataTable dt1 = new DataTable();
+            
             dt1 = D_QuanLyTB.LayThongTinTB(MaTB);
             txtMaTB.Text = dt1.Rows[0][0].ToString();
             txtTenTB.Text = dt1.Rows[0][1].ToString();
@@ -64,12 +67,13 @@ namespace VKTB
             txtTGBD.Text = dt1.Rows[0][8].ToString();
             txtTGKT.Text = dt1.Rows[0][9].ToString();
             txt_ghichu.Text = dt1.Rows[0][6].ToString();
+            Console.WriteLine("haha",dt1.Rows[0][6].ToString());
             txtLoaiTB.Text = dt1.Rows[0][7].ToString();
             MemoryStream mrs = new MemoryStream((Byte[])dt1.Rows[0][10]);
             Anh.Image = Image.FromStream(mrs);
             btnCapNhat.Enabled = true;
-            btnNhap.Enabled = true;
-            btnXuat.Enabled = true;
+            //btnNhap.Enabled = true;
+            btnThanhLy.Enabled = true;
             //DataRow hang = gridView1.GetFocusedDataRow();
             //String MaVK = hang["MaVK"].ToString();         
             //string TinhTang = hang["TinhTrangMuon"].ToString();
@@ -222,9 +226,17 @@ namespace VKTB
         {
             MaTB = txtMaTB.Text;
             TenTB = txtTenTB.Text;
+            TinhTrang = txtTT.Text;
+            GhiChu = txt_ghichu.Text;
             ThayDoiTTTB td1 = new ThayDoiTTTB();
-
             td1.ShowDialog();
+            LoadDsTB();
+        }
+
+        private void btnThanhLy_Click(object sender, EventArgs e)
+        {
+            D_QuanLyTB.ThanhLyTB(txtMaTB.Text);
+            MessageBox.Show("Thanh lý thành công");
             LoadDsTB();
         }
         //void OpenForm(Type typeForm)

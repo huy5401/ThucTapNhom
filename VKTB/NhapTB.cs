@@ -12,17 +12,15 @@ using DAL;
 
 namespace VKTB
 {
-    public partial class ThayDoiTTTB : DevExpress.XtraEditors.XtraForm
+    public partial class NhapTB : DevExpress.XtraEditors.XtraForm
     {
-        public ThayDoiTTTB()
+        public NhapTB()
         {
             InitializeComponent();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
-
             //string MaCBNhap = DangNhap.MaCB; 
             //if (D_QuanLyVK.KiemTraSuTonTaiTrongBangVK (txtMaVuKhi.Text) == true)  // mã vũ khí nhập vào đã tồn tại trong bảng vũ khí
             //{
@@ -56,25 +54,34 @@ namespace VKTB
             this.Close();
         }
 
+        private void cmbLoaiVK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void dtpNgayNhapKho_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void ThayDoiTT_Load(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            cmbLoaiTB.DataSource = D_QuanLyTB.LayLoaiTB();
-            cmbLoaiTB.DisplayMember = "TenTT";
-            cmbLoaiTB.ValueMember = "MaTT";
-            txt_ghichu.Text = QuanLyTB.GhiChu;
-            txtTen.Text = QuanLyTB.TenTB;
-            
+
         }
 
-        private void btnCN_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            D_QuanLyTB.CapNhatTTTB(QuanLyTB.MaTB, cmbLoaiTB.SelectedValue.ToString(), dtpTGBD.Value, txt_ghichu.Text);
-            MessageBox.Show("Cập nhật thành công");
+
+        }
+
+        private void txtMaVuKhi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
