@@ -43,9 +43,8 @@ namespace VKTB
         private void QLSuDung_Load(object sender, EventArgs e)
         {
             //string current_date = NgaySD.Text;
-            string current_date = "12-12-2022";
-            string maPhong = cb_Phong.Text;
-            LichSD.DataSource = D_QLSuDung.HienThiLichSD(current_date, maPhong);
+            
+            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text);
             init();
         }
         
@@ -144,9 +143,7 @@ namespace VKTB
             MessageBox.Show("Sửa lịch sử dụng thành công");
 
             // fix cứng current date
-            string current_date = "12-12-2022";
-            string maPhong = cb_Phong.Text;
-            LichSD.DataSource = D_QLSuDung.HienThiLichSD(current_date, maPhong);
+            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text);
             init();
         }
 
