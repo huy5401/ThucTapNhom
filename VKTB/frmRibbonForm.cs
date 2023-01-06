@@ -98,9 +98,6 @@ namespace VKTB
         private void barButtonItem15_ItemClick(object sender, ItemClickEventArgs e)
         {
             OpenForm(typeof(TaoTaiKhoan));
-
         }
-
-
     }
 }

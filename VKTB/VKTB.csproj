@@ -100,6 +100,12 @@
     <Compile Include="LenLichSD.Designer.cs">
       <DependentUpon>LenLichSD.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoTaiKhoan.Designer.cs">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThayDoiTTTB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LenLichSD.resx">
       <DependentUpon>LenLichSD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaoTaiKhoan.resx">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThayDoiTTTB.resx">
       <DependentUpon>ThayDoiTTTB.cs</DependentUpon>
