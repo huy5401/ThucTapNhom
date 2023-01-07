@@ -77,6 +77,11 @@ namespace VKTB
             OpenForm(typeof(QLSuDung));
         }
 
+        private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(LenLichSD));
+        }
+
 
         private void btnViPham_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -95,7 +100,5 @@ namespace VKTB
             OpenForm(typeof(TaoTaiKhoan));
 
         }
-
-
     }
 }

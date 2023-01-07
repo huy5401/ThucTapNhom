@@ -19,9 +19,11 @@ namespace VKTB
         {
             InitializeComponent();
         }
-        string MaBm;
-        DateTime NgayTruc;
-        string MaCt;
+      string MaBm;
+      DateTime NgayTruc;
+     public static string MaCt;
+     public static string MaCbNhanBanGiao;
+       
 
         private void QLLichTruc_Load(object sender, EventArgs e)
         {
@@ -35,6 +37,7 @@ namespace VKTB
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
+          
             
             DataRow hang = gridView1.GetFocusedDataRow();
             String MaCBPhanCong = "CB01";
@@ -48,7 +51,7 @@ namespace VKTB
             groupCBPhanCong.Enabled = false;
             groupCBBanGiao.Enabled = false;
 
-            if (dtpNgayTruc.Value < DateTime.Today)
+            if (dtpNgayTruc.Value <= DateTime.Today)
             {
                 dtpNgayTruc.Enabled = false;
                 txtGhiChu.Visible = true;
@@ -75,8 +78,9 @@ namespace VKTB
                     TxtTenCBBanGiao.Text = "";
                     txtChucVuBanGiao.Text = "";
                 }
+            
 
-                DataTable dt2 = new DataTable();
+            DataTable dt2 = new DataTable();
                 dt2 = D_QLLichTruc.ThongTinCanBo(MaCBTruc);
                 txtMaCBTruc.Text = dt2.Rows[0][0].ToString();
                 txtChucVuTruc.Text = dt2.Rows[0][2].ToString();
@@ -95,6 +99,17 @@ namespace VKTB
                 txtChucVuPhanCong.Text = dt3.Rows[0][2].ToString();
                 txtGhiChu.Text = hang["GhiChu"].ToString();
             cmbMaPhong.Text = MaPhong;
+
+            if (dtpNgayTruc.Value == DateTime.Today && MaCBNhanBanGiao == "")
+            {
+                int phong = Int32.Parse(MaPhong);
+                btnBanGiao.Enabled = true;
+                MaCbNhanBanGiao = D_QLLichTruc.LayMaCbNhanBanGiao(phong, dtpNgayTruc.Value);
+            }
+            else
+            {
+                btnBanGiao.Enabled = false;
+            }
         }
 
         private void btnSuaLichTruc_Click(object sender, EventArgs e)
@@ -158,5 +173,15 @@ namespace VKTB
             txtChucVuTruc.Text = dt1.Rows[0][2].ToString();
          
         }
+
+        private void btnBanGiao_Click(object sender, EventArgs e)
+        {
+            XacNhanCanBoBanGiao xacnhan = new XacNhanCanBoBanGiao();
+            xacnhan.ShowDialog();
+            LoadDsLichTruc();
+
+        }
+
+     
     }
 }
