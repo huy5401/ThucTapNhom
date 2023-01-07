@@ -19,27 +19,36 @@ namespace VKTB
             InitializeComponent();
         }
 
+        public bool Check()
+        {
+            bool ck = true;
+            if(txtSoLuong.Text == "" || txtTenTB.Text == "")
+            {
+                ck = false;
+            }
+            return ck;
+            
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //string MaCBNhap = DangNhap.MaCB; 
-            //if (D_QuanLyVK.KiemTraSuTonTaiTrongBangVK (txtMaVuKhi.Text) == true)  // mã vũ khí nhập vào đã tồn tại trong bảng vũ khí
-            //{
-            //    MessageBox.Show("Mã vũ khí đã tồn tại");
-            //    D_QuanLyVK.CapNhatBangVuKhi(txtMaVuKhi.Text);
-            //    D_QuanLyVK.ThemVaoBangVKCB(txtMaVuKhi.Text, MaCBNhap, dtpNgayNhapKho.Value);
-            //    D_QuanLyVK.ThemVaoBangVuKhiTinhTrang(txtMaVuKhi.Text, dtpNgayNhapKho.Value);
-            //    txtMaVuKhi.Text = "";
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Mã vũ khí chưa tồn tại");
-             
-            //    D_QuanLyVK.ThemVaoBangVuKhi(txtMaVuKhi.Text, cmbLoaiVK.SelectedValue.ToString());
-            //    D_QuanLyVK.ThemVaoBangVKCB(txtMaVuKhi.Text, MaCBNhap, dtpNgayNhapKho.Value);
-            //    D_QuanLyVK.ThemVaoBangVuKhiTinhTrang(txtMaVuKhi.Text, dtpNgayNhapKho.Value);
-            //    txtMaVuKhi.Text = "";
-            //}
-           
+            if(Check())
+            {
+                int soLuong = Convert.ToInt32(txtSoLuong.Text);
+                for (int i = 0; i < soLuong; i++)
+                {
+                    string maTB = D_QuanLyTB.LayMaTB();
+                    D_QuanLyTB.ThemTB(maTB, txtTenTB.Text, cmbLoaiTB.SelectedValue.ToString(), cbxPhong.SelectedValue.ToString(), cbxNCC.SelectedValue.ToString(), dtpNgayNhapKho.Value);
+                }
+                MessageBox.Show("Thêm thiết bị thành công!");
+                D_QuanLyTB.CapNhatSL();
+            }
+            else
+            {
+                MessageBox.Show("Thiếu thông tin!");
+            }
+            
+
         }
 
         private void NhapVuKhi_Load(object sender, EventArgs e)
@@ -82,6 +91,39 @@ namespace VKTB
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)// thêm Nhà cung cấp
+        {
+            ThemNCC tnc1 = new ThemNCC();
+            tnc1.ShowDialog();
+            cbxNCC.DataSource = D_QuanLyTB.LayNCC();
+            cbxNCC.DisplayMember = "TenNCC";
+            cbxNCC.ValueMember = "MaNCC";
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)// Thêm Phòng
+        {
+            ThemPhong tp1 = new ThemPhong();
+            tp1.ShowDialog();
+            cbxPhong.DataSource = D_QuanLyTB.LayPhong();
+            cbxPhong.DisplayMember = "TenPhong";
+            cbxPhong.ValueMember = "MaPhong";
+        }
+
+        private void NhapTB_Load(object sender, EventArgs e)
+        {
+            cmbLoaiTB.DataSource = D_QuanLyTB.LayDanhMucTB();
+            cmbLoaiTB.DisplayMember = "TenLoai";
+            cmbLoaiTB.ValueMember = "MaLoai";
+
+            cbxPhong.DataSource = D_QuanLyTB.LayPhong();
+            cbxPhong.DisplayMember = "TenPhong";
+            cbxPhong.ValueMember = "MaPhong";
+
+            cbxNCC.DataSource = D_QuanLyTB.LayNCC();
+            cbxNCC.DisplayMember = "TenNCC";
+            cbxNCC.ValueMember = "MaNCC";
         }
     }
 }

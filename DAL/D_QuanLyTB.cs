@@ -72,6 +72,69 @@ namespace DAL
             Dataprovider.ExecuteQuery(sql);
         }
 
+        public static DataTable LayPhong()
+        {
+            string sql = @"select MaPhong, TenPhong
+                            from PHONGTHINGHIEM";
+            return Dataprovider.ExecuteQuery(sql);
+        }
+
+        public static DataTable LayNCC()
+        {
+            string sql = @"select MaNCC, TenNCC
+                            from NHACUNGCAP";
+            return Dataprovider.ExecuteQuery(sql);
+        }
+
+        public static DataTable LayBM()
+        {
+            string sql = @"select MaBM, TenBM
+                            from BOMON";
+            return Dataprovider.ExecuteQuery(sql);
+        }
+
+        public static void ThemPhong(string MaPhong, string TenPhong, string DiaDiem, string maBM)
+        {
+            string sql = @"ThemPhong @MaPhong , @TenPhong , @Dd , @MaBM";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { MaPhong, TenPhong, DiaDiem, maBM});
+        }
+
+        public static string LayMaPhong()
+        {
+            string sql = @"LayMaPhong";
+            object MaLoaitb = Dataprovider.ExecuteScalar(sql);
+            return Convert.ToString(MaLoaitb);
+        }
+        public static string LayMaNCC()
+        {
+            string sql = @"LayMaNCC";
+            object MaLoaitb = Dataprovider.ExecuteScalar(sql);
+            return Convert.ToString(MaLoaitb);
+        }
+        public static void ThemNCC(string MaNCC, string TenNCC)
+        {
+            string sql = @"ThemNCC @MaNCC , @TenNCC";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { MaNCC, TenNCC});
+        }
+
+        public static string LayMaTB()
+        {
+            string sql = @"LayMaTB";
+            object MaLoaitb = Dataprovider.ExecuteScalar(sql);
+            return Convert.ToString(MaLoaitb);
+        }
+
+        public static void ThemTB(string MaTB, string TenTB, string maLoai, string maPhong, string maNCC, DateTime ngayNhap)
+        {
+            string sql = @"ThemTB @MaTB , @TenTB , @MaLoai , @MaPhong , @MaNCC , @NgaySanXuat";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { MaTB, TenTB, maLoai, maPhong, maNCC, ngayNhap});
+        }
+
+        public static void CapNhatSL()
+        {
+            string sql = @"CapNhatSoLuong";
+            Dataprovider.ExecuteNonQuery(sql);
+        }
 
     }
 }
