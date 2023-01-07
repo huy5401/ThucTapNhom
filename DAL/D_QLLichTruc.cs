@@ -90,6 +90,30 @@ WHERE bm.MaBM = '"+MaBm+"'";
             string sql = @"KhongCapNhatNgay @MaCbTruc , @MaPhong , @GhiChu , @MaCaTruc";
             Dataprovider.ExecuteNonQuery(sql, new object[] { MaCbTruc, MaPhong, GhiChu, MaCaTruc });
         }
-
+        public static string LayMaCbNhanBanGiao(int MaPhong, DateTime TG)
+        {
+            string sql = @"LayMaCbNhanBanGiao @MaPhong , @TG";
+            object MaCbNhan = Dataprovider.ExecuteScalar(sql, new object[] { MaPhong, TG });
+            return Convert.ToString(MaCbNhan);
+        }
+        public static int XacNhan(string MaCbNhanBanGiao, string TenDangNhap, string MatKhau)
+        {
+            // nếu = 1 thì xác nhận đúng
+            string sql = @"XacNhan @MaCbNhanBanGiao , @TenDangNhap , @MatKhau";
+            object DemSoLuong = Dataprovider.ExecuteScalar(sql, new object[] { MaCbNhanBanGiao, TenDangNhap, MatKhau});
+            return Convert.ToInt32(DemSoLuong);
+        }
+        public static DataTable ThongTinCaTruc(string MaCt)
+        {
+            string sql = @"SELECT  ct.MaCT,  FORMAT (ct.TGTruc,'dd/MM/yyyy') AS 'TGTruc' , ct.MaCB, ct.MaPhong
+FROM dbo.CATRUC ct
+WHERE ct.MaCT = '"+MaCt+"'";
+            return Dataprovider.ExecuteQuery(sql);
+        }
+        public static void UpdateCaTruc(string GhiChu, string MaCbNhan, string MaCaTruc)
+        {
+            string sql = @"UpdateCaTruc @GhiChu , @MaCbNhan , @MaCaTruc";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { GhiChu, MaCbNhan, MaCaTruc });
+        }
     }
 }
