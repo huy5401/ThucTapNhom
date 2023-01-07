@@ -55,7 +55,7 @@ namespace VKTB
 
         private void btnThemLichTruc_Click(object sender, EventArgs e)
         {
-            if(dtpNgayThucHien.Value <= DateTime.Now)
+            if(dtpNgayThucHien.Value < DateTime.Today)
             {
                 MessageBox.Show("Ngày thực hiện không hợp lệ");
             }
@@ -64,9 +64,7 @@ namespace VKTB
                
                 string MaCaTruc = D_QLLichTruc.LayMaCaTruc();
                 int maphong = Int32.Parse(cmbMaPhong.Text);
-                MessageBox.Show(MaCaTruc);
-                MessageBox.Show(cmbCanBoTruc.SelectedValue.ToString());
-                MessageBox.Show(cmbMaPhong.Text);
+               
                 D_QLLichTruc.ThemVaoBangCaTruc(MaCaTruc, dtpNgayThucHien.Value, cmbCanBoTruc.SelectedValue.ToString(), maphong);
                 MessageBox.Show("Thêm Thành Công");
                 LoadCanBoTruc();

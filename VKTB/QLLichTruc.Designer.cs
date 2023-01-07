@@ -67,6 +67,7 @@ namespace VKTB
             this.dtpNgayTruc = new System.Windows.Forms.DateTimePicker();
             this.cmbMaPhong = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnBanGiao = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.DsLichTruc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupCBTruc.SuspendLayout();
@@ -228,7 +229,6 @@ namespace VKTB
             this.CmbHoTenCbTruc.Name = "CmbHoTenCbTruc";
             this.CmbHoTenCbTruc.Size = new System.Drawing.Size(150, 24);
             this.CmbHoTenCbTruc.TabIndex = 26;
-           
             this.CmbHoTenCbTruc.SelectionChangeCommitted += new System.EventHandler(this.CmbHoTenCbTruc_SelectionChangeCommitted);
             // 
             // label9
@@ -384,9 +384,10 @@ namespace VKTB
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(991, 698);
+            this.txtGhiChu.Location = new System.Drawing.Point(991, 682);
+            this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(199, 23);
+            this.txtGhiChu.Size = new System.Drawing.Size(347, 62);
             this.txtGhiChu.TabIndex = 18;
             // 
             // label5
@@ -400,7 +401,7 @@ namespace VKTB
             // 
             // btnSuaLichTruc
             // 
-            this.btnSuaLichTruc.Location = new System.Drawing.Point(1035, 448);
+            this.btnSuaLichTruc.Location = new System.Drawing.Point(910, 449);
             this.btnSuaLichTruc.Name = "btnSuaLichTruc";
             this.btnSuaLichTruc.Size = new System.Drawing.Size(112, 63);
             this.btnSuaLichTruc.TabIndex = 24;
@@ -443,11 +444,22 @@ namespace VKTB
             this.label8.TabIndex = 30;
             this.label8.Text = "Phòng : ";
             // 
+            // btnBanGiao
+            // 
+            this.btnBanGiao.Enabled = false;
+            this.btnBanGiao.Location = new System.Drawing.Point(1112, 449);
+            this.btnBanGiao.Name = "btnBanGiao";
+            this.btnBanGiao.Size = new System.Drawing.Size(112, 63);
+            this.btnBanGiao.TabIndex = 31;
+            this.btnBanGiao.Text = "Bàn Giao Lịch";
+            this.btnBanGiao.Click += new System.EventHandler(this.btnBanGiao_Click);
+            // 
             // QLLichTruc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1813, 772);
+            this.Controls.Add(this.btnBanGiao);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cmbMaPhong);
             this.Controls.Add(this.label11);
@@ -515,5 +527,6 @@ namespace VKTB
         private System.Windows.Forms.DateTimePicker dtpNgayTruc;
         private System.Windows.Forms.ComboBox cmbMaPhong;
         private System.Windows.Forms.Label label8;
+        private DevExpress.XtraEditors.SimpleButton btnBanGiao;
     }
 }

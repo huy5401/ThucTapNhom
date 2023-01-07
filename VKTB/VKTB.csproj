@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanGiaoLichTruc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanGiaoLichTruc.Designer.cs">
+      <DependentUpon>BanGiaoLichTruc.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +80,6 @@
     <Compile Include="frmRibbonForm.Designer.cs">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </Compile>
-
     <Compile Include="NhapTB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,13 +91,12 @@
     </Compile>
     <Compile Include="QuanLyTK_CBBM.designer.cs">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="TaoTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TaoTaiKhoan.Designer.cs">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
-
     </Compile>
     <Compile Include="LenLichSD.cs">
       <SubType>Form</SubType>
@@ -180,28 +184,32 @@
     <Compile Include="ThemTK.Designer.cs">
       <DependentUpon>ThemTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="XacNhanCanBoBanGiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XacNhanCanBoBanGiao.Designer.cs">
+      <DependentUpon>XacNhanCanBoBanGiao.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BanGiaoLichTruc.resx">
+      <DependentUpon>BanGiaoLichTruc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRibbonForm.resx">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="NhapTB.resx">
       <DependentUpon>NhapTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyTK_CBBM.resx">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaoTaiKhoan.resx">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="LenLichSD.resx">
       <DependentUpon>LenLichSD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TaoTaiKhoan.resx">
-      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThayDoiTTTB.resx">
       <DependentUpon>ThayDoiTTTB.cs</DependentUpon>
@@ -248,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemTK.resx">
       <DependentUpon>ThemTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XacNhanCanBoBanGiao.resx">
+      <DependentUpon>XacNhanCanBoBanGiao.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
