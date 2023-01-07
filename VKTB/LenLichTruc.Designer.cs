@@ -192,7 +192,7 @@ namespace VKTB
             // 
             // btnThemLichTruc
             // 
-            this.btnThemLichTruc.Location = new System.Drawing.Point(1122, 160);
+            this.btnThemLichTruc.Location = new System.Drawing.Point(814, 160);
             this.btnThemLichTruc.Name = "btnThemLichTruc";
             this.btnThemLichTruc.Size = new System.Drawing.Size(112, 41);
             this.btnThemLichTruc.TabIndex = 23;
@@ -201,11 +201,10 @@ namespace VKTB
             // 
             // DsLichTruc
             // 
-            this.DsLichTruc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DsLichTruc.Location = new System.Drawing.Point(0, 302);
+            this.DsLichTruc.Location = new System.Drawing.Point(322, 246);
             this.DsLichTruc.MainView = this.gridView1;
             this.DsLichTruc.Name = "DsLichTruc";
-            this.DsLichTruc.Size = new System.Drawing.Size(1748, 483);
+            this.DsLichTruc.Size = new System.Drawing.Size(1085, 438);
             this.DsLichTruc.TabIndex = 24;
             this.DsLichTruc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -228,13 +227,13 @@ namespace VKTB
             // 
             this.gridColumn1.Caption = "Mã Công Tác";
             this.gridColumn1.FieldName = "MaCT";
-            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.MinWidth = 50;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsColumn.AllowFocus = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 94;
+            this.gridColumn1.Width = 100;
             // 
             // gridColumn2
             // 
@@ -246,7 +245,7 @@ namespace VKTB
             this.gridColumn2.OptionsColumn.AllowFocus = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 94;
+            this.gridColumn2.Width = 297;
             // 
             // gridColumn3
             // 
@@ -258,7 +257,7 @@ namespace VKTB
             this.gridColumn3.OptionsColumn.AllowFocus = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 94;
+            this.gridColumn3.Width = 297;
             // 
             // gridColumn4
             // 
@@ -270,7 +269,7 @@ namespace VKTB
             this.gridColumn4.OptionsColumn.AllowFocus = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 94;
+            this.gridColumn4.Width = 297;
             // 
             // gridColumn6
             // 
@@ -278,9 +277,11 @@ namespace VKTB
             this.gridColumn6.FieldName = "MaPhong";
             this.gridColumn6.MinWidth = 25;
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.AllowFocus = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 94;
+            this.gridColumn6.Width = 100;
             // 
             // gridColumn5
             // 
