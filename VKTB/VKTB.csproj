@@ -92,6 +92,12 @@
     <Compile Include="NhapTB.designer.cs">
       <DependentUpon>NhapTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoTaiKhoan.designer.cs">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemNCC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,23 +116,11 @@
     <Compile Include="QuanLyTK_CBBM.designer.cs">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
     </Compile>
-    <Compile Include="TaoTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TaoTaiKhoan.Designer.cs">
-      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
-    </Compile>
     <Compile Include="LenLichSD.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LenLichSD.Designer.cs">
       <DependentUpon>LenLichSD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TaoTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TaoTaiKhoan.Designer.cs">
-      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="ThayDoiTTTB.cs">
       <SubType>Form</SubType>
@@ -223,6 +217,9 @@
     <EmbeddedResource Include="NhapTB.resx">
       <DependentUpon>NhapTB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TaoTaiKhoan.resx">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThemNCC.resx">
       <DependentUpon>ThemNCC.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,9 +228,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyTK_CBBM.resx">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TaoTaiKhoan.resx">
-      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LenLichSD.resx">
       <DependentUpon>LenLichSD.cs</DependentUpon>
