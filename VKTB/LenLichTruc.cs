@@ -22,8 +22,8 @@ namespace VKTB
         string MaCBPhanCong;
         private void LenLichTruc_Load(object sender, EventArgs e)
         {
-             MaCBPhanCong = "CB01";
-            MaBm = "BM01";
+            MaCBPhanCong = DangNhap.MaCB;
+            MaBm = DangNhap.MaBM;
             DataTable dt1 = new DataTable();
             dt1 = D_QLLichTruc.ThongTinCanBo(MaCBPhanCong);
             txtMaCBPhanCong.Text = dt1.Rows[0][0].ToString();

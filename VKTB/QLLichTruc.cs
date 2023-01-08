@@ -27,7 +27,7 @@ namespace VKTB
 
         private void QLLichTruc_Load(object sender, EventArgs e)
         {
-            MaBm = "BM01";
+            MaBm = DangNhap.MaBM;
             LoadDsLichTruc();
         }
         void LoadDsLichTruc()
@@ -40,7 +40,7 @@ namespace VKTB
           
             
             DataRow hang = gridView1.GetFocusedDataRow();
-            String MaCBPhanCong = "CB01";
+            String MaCBPhanCong = DangNhap.MaCB;
             String MaCBTruc = hang["MaCB"].ToString();
             String MaCBNhanBanGiao = hang["MaCBNBG"].ToString();
             string TGTruc = hang["TGTruc"].ToString();
