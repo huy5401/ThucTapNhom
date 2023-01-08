@@ -13,7 +13,7 @@ namespace DAL
         {
             string sql = @"SELECT cb.MaCB, cb.TenCB, cv.TenCVu, bm.TenBM, cb.SĐT
                         FROM dbo.CANBO cb
-                        JOIN dbo.CHUCVU cv ON cv.MaCVu = cb.MaCVu
+                        JOIN dbo.CHUCVU cv ON cv.MaCVu = cb.MaCV
                         JOIN dbo.BOMON bm ON bm.MaBM = cb.MaBM
 						WHERE cb.MaBM = '" + MaBMHienTai + "' AND cb.MaCB != '" + MaCbHienTai + "' ";
             return Dataprovider.ExecuteQuery(sql);
@@ -46,14 +46,14 @@ namespace DAL
             return Dataprovider.ExecuteQuery(sql);
         }
 
-        public static void SuaThongTinCB(string MaCB, string TenCB, string MaCVu, string MaBM, int SDT) {
-            string sql = @"SuaThongTinCB @MaCB , @TenCB , @MaCVu , @MaBM , @SDT";
-            Dataprovider.ExecuteNonQuery(sql, new object[] { MaCB, TenCB, MaCVu, MaBM, SDT});
+        public static void SuaThongTinCB(string MaCB, string TenCB, string MaCV, string MaBM, int SDT) {
+            string sql = @"SuaThongTinCB @MaCB , @TenCB , @MaCV , @MaBM , @SDT";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { MaCB, TenCB, MaCV, MaBM, SDT});
         }
 
-        public static void ThemCB(string MaCB, string TenCB, string MaCVu, string MaBM, int SDT) {
-            string sql = @"ThemCB @MaCB , @TenCB , @MaCVu , @MaBM , @SDT";
-            Dataprovider.ExecuteNonQuery(sql, new object[] { MaCB, TenCB, MaCVu, MaBM, SDT});
+        public static void ThemCB(string MaCB, string TenCB, string MaCV, string MaBM, int SDT) {
+            string sql = @"ThemCB @MaCB , @TenCB , @MaCV , @MaBM , @SDT";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { MaCB, TenCB, MaCV, MaBM, SDT});
         }
 
         public static int DangNhap(string TenDangNhap, string MatKhau)
