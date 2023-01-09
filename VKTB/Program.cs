@@ -16,7 +16,7 @@ namespace VKTB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRibbonForm());
+            Application.Run(new DangNhap());
             //hgjfjdkjgk
             //ẹndihweidjsifhsiuhef
         }

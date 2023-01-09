@@ -48,8 +48,17 @@ namespace VKTB
                 MaCB = dt.Rows[0][0].ToString();
                 MaBM = dt.Rows[0][1].ToString();
                 Quyen = dt.Rows[0][2].ToString();
-                frmRibbonForm form=new frmRibbonForm();
-                form.ShowDialog();
+                if(Quyen == "0")
+                {
+                    frmRibbonForm admin = new frmRibbonForm();
+                    admin.ShowDialog();
+                }
+                else
+                {
+                    GiaoVien user = new GiaoVien();
+                    user.ShowDialog();
+                }
+               
             }
             else
             {
