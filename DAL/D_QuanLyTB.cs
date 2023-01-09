@@ -47,10 +47,10 @@ namespace DAL
             return Dataprovider.ExecuteQuery(sql);
         }
 
-        public static DataTable LayThongTinTB(string maTB)
+        public static DataTable LayThongTinTB(string maTB, DateTime tgbd)
         {
-            string sql = @"LayTT_TB @MaTB ";
-            return Dataprovider.ExecuteQuery(sql, new object[] { maTB});
+            string sql = @"LayTT_TB @MaTB , @tgbd ";
+            return Dataprovider.ExecuteQuery(sql, new object[] { maTB, tgbd});
         }
 
         public static void CapNhatTTTB(string MaTB, string MaTT, DateTime NgayNhap, string GhiChu)
@@ -136,6 +136,12 @@ namespace DAL
             Dataprovider.ExecuteNonQuery(sql);
         }
 
- 
+        public static DataTable LichSuTT(string maTB) /*DanhSachTB*/
+        {
+            string sql = @"LichSuTinhTrang @maTB";
+            return Dataprovider.ExecuteQuery(sql, new object[] { maTB });
+        }
+
+
     }
 }

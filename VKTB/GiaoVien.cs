@@ -53,5 +53,10 @@ namespace VKTB
             OpenForm(typeof(TongTinCN_GV));
 
         }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(QuanLyTB));
+        }
     }
 }
