@@ -58,6 +58,7 @@ namespace VKTB
             // 
             // ribbon
             // 
+            this.ribbon.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(26, 24, 26, 24);
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -71,11 +72,13 @@ namespace VKTB
             this.barButtonItem7,
             this.btnDangXuat});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbon.MaxItemId = 9;
             this.ribbon.Name = "ribbon";
+            this.ribbon.OptionsMenuMinWidth = 283;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1417, 193);
+            this.ribbon.Size = new System.Drawing.Size(1215, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // bnt_TTCN
@@ -86,6 +89,7 @@ namespace VKTB
             this.bnt_TTCN.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bnt_TTCN.ImageOptions.LargeImage")));
             this.bnt_TTCN.LargeWidth = 80;
             this.bnt_TTCN.Name = "bnt_TTCN";
+            this.bnt_TTCN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bnt_TTCN_ItemClick);
             // 
             // btn_QlLichTruc
             // 
@@ -188,10 +192,11 @@ namespace VKTB
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 707);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 575);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1417, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1215, 24);
             // 
             // documentManager1
             // 
@@ -204,12 +209,13 @@ namespace VKTB
             // 
             // GiaoVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1417, 737);
+            this.ClientSize = new System.Drawing.Size(1215, 599);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GiaoVien";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

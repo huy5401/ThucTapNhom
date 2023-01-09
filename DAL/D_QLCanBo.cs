@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -84,6 +85,18 @@ namespace DAL
         public static void ThemTK(string MaTK, string MaCB, string TenTK, string MatKhau, string Quyen) {
             string sql = @"ThemTK @MaTK , @MaCB , @TenTK , @MatKhau , @Quyen";
             Dataprovider.ExecuteNonQuery(sql, new object[] { MaTK, MaCB, TenTK, MatKhau, Quyen });
+        }
+
+        public static DataTable ThongTinGV(string MaCB)
+        {
+            string sql = @"ThongTinGV @MaCB";
+            return Dataprovider.ExecuteQuery(sql, new object[] { MaCB });
+        }
+
+        public static void DoiMK(string MaCB, string MK)
+        {
+            string sql = @"DoiMK @MaCB , @MK";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { MaCB, MK });
         }
     }
 }
