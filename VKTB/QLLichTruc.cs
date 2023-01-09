@@ -29,6 +29,14 @@ namespace VKTB
         {
             MaBm = DangNhap.MaBM;
             LoadDsLichTruc();
+            if (DangNhap.Quyen == "0")
+            {
+                btnSuaLichTruc.Visible = true;
+            }
+            else
+            {
+                btnSuaLichTruc.Visible = false;
+            }
         }
         void LoadDsLichTruc()
         {
