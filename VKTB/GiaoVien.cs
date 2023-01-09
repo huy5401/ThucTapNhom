@@ -42,5 +42,10 @@ namespace VKTB
         {
             OpenForm(typeof(QLLichTruc));
         }
+
+        private void bnt_TTCN_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(TongTinCN_GV));
+        }
     }
 }
