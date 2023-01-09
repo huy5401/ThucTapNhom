@@ -17,5 +17,10 @@ namespace VKTB
         {
             InitializeComponent();
         }
+
+        private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

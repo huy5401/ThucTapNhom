@@ -41,6 +41,10 @@ namespace VKTB
             cb_Phong.Properties.Items.Clear();
             DataTable dt = new DataTable();
             dt = D_QLSuDung.LayDSPhong("BM01");
+            dt = D_QLSuDung.LayDSPhong("CB01");
+           string MaCb =  DangNhap.MaCB;
+          string MaBm=  DangNhap.MaBM;
+           string quyen =  DangNhap.Quyen;
             foreach (DataRow row in dt.Rows)
             {
                 cb_Phong.Properties.Items.Add(row["MaPhong"]);
