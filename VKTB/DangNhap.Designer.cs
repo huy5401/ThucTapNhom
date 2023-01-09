@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
-            this.btnDangKy = new DevExpress.XtraEditors.SimpleButton();
             this.buttonXem = new DevExpress.XtraEditors.SimpleButton();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,15 +36,6 @@
             this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // btnDangKy
-            // 
-            this.btnDangKy.Location = new System.Drawing.Point(279, 184);
-            this.btnDangKy.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(118, 48);
-            this.btnDangKy.TabIndex = 37;
-            this.btnDangKy.Text = "Đăng Ký";
             // 
             // buttonXem
             // 
@@ -84,7 +74,7 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(101, 184);
+            this.btnDangNhap.Location = new System.Drawing.Point(186, 181);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(121, 48);
@@ -104,7 +94,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 265);
-            this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.buttonXem);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.label2);
@@ -120,8 +109,6 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.SimpleButton btnDangKy;
         private DevExpress.XtraEditors.SimpleButton buttonXem;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Label label2;
