@@ -208,6 +208,12 @@
     <Compile Include="XacNhanCanBoBanGiao.Designer.cs">
       <DependentUpon>XacNhanCanBoBanGiao.cs</DependentUpon>
     </Compile>
+    <Compile Include="XemLichSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemLichSD.Designer.cs">
+      <DependentUpon>XemLichSD.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BanGiaoLichTruc.resx">
       <DependentUpon>BanGiaoLichTruc.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XacNhanCanBoBanGiao.resx">
       <DependentUpon>XacNhanCanBoBanGiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemLichSD.resx">
+      <DependentUpon>XemLichSD.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

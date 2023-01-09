@@ -50,5 +50,10 @@ namespace DAL
             Dataprovider.ExecuteNonQuery(query);
 
         }
+        public static DataTable LocLichSuDung(int Thang, int nam, string CB)
+        {
+            string sql = @"LocLichSuDung @Thang , @nam , @CB";
+            return Dataprovider.ExecuteQuery(sql, new object[] { Thang, nam ,CB});
+        }
     }
 }
