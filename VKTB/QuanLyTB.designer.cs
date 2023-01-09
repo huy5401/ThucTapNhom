@@ -473,7 +473,7 @@ namespace VKTB
             this.Controls.Add(this.DsVuKhi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "QuanLyTB";
-            this.Text = "Tìm Kiếm Vũ Khí";
+            this.Text = "Danh sách trang bị";
             this.Load += new System.EventHandler(this.QuanLyVKTB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DsVuKhi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
