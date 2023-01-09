@@ -17,10 +17,30 @@ namespace VKTB
         {
             InitializeComponent();
         }
+        void OpenForm(Type typeForm)
+        {
+            foreach (Form frm in MdiChildren)
+            {
+                if (frm.GetType() == typeForm)
+                {
+                    frm.Activate();
+                    return;
+                }
+            }
+            Form f = (Form)Activator.CreateInstance(typeForm);
+            f.MdiParent = this;
+            f.Show();
+
+        }
 
         private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_QlLichTruc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(QLLichTruc));
         }
     }
 }
