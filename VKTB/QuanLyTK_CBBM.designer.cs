@@ -29,6 +29,7 @@ namespace VKTB
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyTK_CBBM));
             this.DsTK = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,6 +45,7 @@ namespace VKTB
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtQuyen = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -56,10 +58,14 @@ namespace VKTB
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.btnXuatKho = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSuaTT = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DsTK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // DsTK
@@ -73,7 +79,6 @@ namespace VKTB
             this.DsTK.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.DsTK.Load += new System.EventHandler(this.DsTK_Load);
-            this.DsTK.Click += new System.EventHandler(this.DsTK_Click);
             // 
             // gridView1
             // 
@@ -216,6 +221,8 @@ namespace VKTB
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox2);
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.txtQuyen);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtSDT);
@@ -235,6 +242,17 @@ namespace VKTB
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin cán bộ";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(628, 138);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtQuyen
             // 
@@ -302,6 +320,7 @@ namespace VKTB
             // 
             // txtMaCB
             // 
+            this.txtMaCB.Enabled = false;
             this.txtMaCB.Location = new System.Drawing.Point(140, 36);
             this.txtMaCB.Name = "txtMaCB";
             this.txtMaCB.Size = new System.Drawing.Size(150, 23);
@@ -335,14 +354,35 @@ namespace VKTB
             this.label.TabIndex = 9;
             this.label.Text = "Tên Cán Bộ : ";
             // 
-            // btnXuatKho
+            // btnSuaTT
             // 
-            this.btnXuatKho.Enabled = false;
-            this.btnXuatKho.Location = new System.Drawing.Point(714, 682);
-            this.btnXuatKho.Name = "btnXuatKho";
-            this.btnXuatKho.Size = new System.Drawing.Size(150, 48);
-            this.btnXuatKho.TabIndex = 24;
-            this.btnXuatKho.Text = "Sửa";
+            this.btnSuaTT.Enabled = false;
+            this.btnSuaTT.Location = new System.Drawing.Point(528, 678);
+            this.btnSuaTT.Name = "btnSuaTT";
+            this.btnSuaTT.Size = new System.Drawing.Size(150, 48);
+            this.btnSuaTT.TabIndex = 24;
+            this.btnSuaTT.Text = "Sửa thông tin tài khoản";
+            this.btnSuaTT.Click += new System.EventHandler(this.btnSuaTT_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Enabled = false;
+            this.btnXoa.Location = new System.Drawing.Point(876, 678);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(150, 48);
+            this.btnXoa.TabIndex = 25;
+            this.btnXoa.Text = "Xóa Tài khoản";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(117, -3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // QuanLyTK_CBBM
             // 
@@ -352,7 +392,8 @@ namespace VKTB
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1848, 766);
-            this.Controls.Add(this.btnXuatKho);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSuaTT);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTaiKhoan);
@@ -367,6 +408,8 @@ namespace VKTB
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,12 +437,15 @@ namespace VKTB
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label;
-        private DevExpress.XtraEditors.SimpleButton btnXuatKho;
+        private DevExpress.XtraEditors.SimpleButton btnSuaTT;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtChucVu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtQuyen;
         private System.Windows.Forms.Label label5;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

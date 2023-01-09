@@ -43,7 +43,7 @@ namespace VKTB
         private void btnThemDanhMuc_Click(object sender, EventArgs e)
         {
             DataRow hang = gridView1.GetFocusedDataRow();
-            MaLoaiTB = hang["MaLoai"].ToString();
+            //MaLoaiTB = hang["MaLoai"].ToString();
             ThemDanhMuc themdanhmuc = new ThemDanhMuc();
             themdanhmuc.ShowDialog();
             DanhMucVK.DataSource = D_QuanLyTB.LayDanhMucTB();

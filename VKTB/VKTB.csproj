@@ -86,6 +86,12 @@
     <Compile Include="NhapTB.designer.cs">
       <DependentUpon>NhapTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThayDoiQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThayDoiQuyen.designer.cs">
+      <DependentUpon>ThayDoiQuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemNCC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhapTB.resx">
       <DependentUpon>NhapTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThayDoiQuyen.resx">
+      <DependentUpon>ThayDoiQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemNCC.resx">
       <DependentUpon>ThemNCC.cs</DependentUpon>

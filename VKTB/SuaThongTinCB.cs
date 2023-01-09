@@ -15,6 +15,7 @@ namespace VKTB
 {
     public partial class SuaThongTinCB : DevExpress.XtraEditors.XtraForm
     {
+        public static int fcheck;
         public SuaThongTinCB()
         {
             InitializeComponent();
@@ -22,9 +23,18 @@ namespace VKTB
 
         private void SuaThongTinCB_Load(object sender, EventArgs e)
         {
+            string MaCB = "";
+            if(fcheck == 1)
+            {
+                MaCB = QuanLyTK_CBBM.maCB;
+            }
+            if(fcheck == 0)
+            {
+                MaCB = DangNhap.MaCB;
+            }
             //string macb = "CB01";
             DataTable dt=new DataTable();
-            dt = D_QLCanBo.ThongTinCB(DangNhap.MaCB);
+            dt = D_QLCanBo.ThongTinCB(MaCB);
             txtMaCB.Text = dt.Rows[0][0].ToString();
             txtTenCB.Text = dt.Rows[0][1].ToString();
             cmbChucVu.Text = dt.Rows[0][2].ToString();
