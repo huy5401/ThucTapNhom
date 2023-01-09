@@ -44,7 +44,7 @@ namespace VKTB
         {
             //string current_date = NgaySD.Text;
             
-            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text);
+            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text,DangNhap.MaBM);
             init();
         }
         
@@ -79,7 +79,7 @@ namespace VKTB
         {
             cb_CBPT.Properties.Items.Clear();
             DataTable dt = new DataTable();
-            dt = D_QLSuDung.LayDSCbptChuaSD(NgaySD.Text, cb_CaSD.Text);
+            dt = D_QLSuDung.LayDSCbptChuaSD(NgaySD.Text, cb_CaSD.Text,DangNhap.MaBM);
             foreach (DataRow row in dt.Rows)
             {
                 cb_CBPT.Properties.Items.Add(row["MaCB"] + " - " + row["TenCB"]);
@@ -88,13 +88,13 @@ namespace VKTB
         }
         private void NgaySD_EditValueChanged(object sender, EventArgs e)
         {
-            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text);
+            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text,DangNhap.MaBM);
             init();
         }
 
         private void cb_Phong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text);
+            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text,DangNhap.MaBM);
             init();
         }
 
@@ -143,7 +143,7 @@ namespace VKTB
             MessageBox.Show("Sửa lịch sử dụng thành công");
 
             // fix cứng current date
-            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text);
+            LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text,DangNhap.MaBM);
             init();
         }
 
@@ -152,10 +152,11 @@ namespace VKTB
             DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn xóa", "Thông báo", MessageBoxButtons.OKCancel,
             MessageBoxIcon.Information);
 
-            if (dr == DialogResult.Yes)
+            if (dr == DialogResult.OK)
             {
                 D_QLSuDung.XoaLichSD(txt_MaSD.Text);
                 MessageBox.Show("Xóa lịch sử dụng thành công");
+                LichSD.DataSource = D_QLSuDung.HienThiLichSD(NgaySD.Text, cb_Phong.Text, DangNhap.MaBM);
             }
         }
 
