@@ -47,8 +47,8 @@ namespace VKTB
 
         void loadThongTinCB()
         {
-            string macb = "CB01"; string mabm = "BM01";
-            DsCanBo.DataSource = D_QLCanBo.TatCaCanBo(macb,mabm);
+            //string macb = "CB01"; string mabm = "BM01";
+            DsCanBo.DataSource = D_QLCanBo.TatCaCanBo(DangNhap.MaCB,DangNhap.MaBM);
         }
 
         private void btnSuaCB_Click(object sender, EventArgs e)

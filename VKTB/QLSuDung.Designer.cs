@@ -36,6 +36,7 @@ namespace VKTB
             this.Phong_col = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CaSD_col = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaSD_col = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenCB_col = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgaySD = new DevExpress.XtraEditors.DateEdit();
             this.cb_Phong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -47,13 +48,13 @@ namespace VKTB
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.cb_edit_Phong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_CBPT = new System.Windows.Forms.TextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_NoiDung = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnXacNhan = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.cb_CBPT = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.LichSD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NgaySD.Properties)).BeginInit();
@@ -61,6 +62,7 @@ namespace VKTB
             ((System.ComponentModel.ISupportInitialize)(this.cb_Phong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_CaSD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_edit_Phong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_CBPT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LichSD
@@ -80,9 +82,11 @@ namespace VKTB
             this.ND_col,
             this.Phong_col,
             this.CaSD_col,
-            this.MaSD_col});
+            this.MaSD_col,
+            this.TenCB_col});
             this.gridView1.GridControl = this.LichSD;
             this.gridView1.Name = "gridView1";
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
             // CBPT_col
             // 
@@ -138,6 +142,13 @@ namespace VKTB
             this.MaSD_col.Visible = true;
             this.MaSD_col.VisibleIndex = 0;
             this.MaSD_col.Width = 94;
+            // 
+            // TenCB_col
+            // 
+            this.TenCB_col.FieldName = "TenCB";
+            this.TenCB_col.MinWidth = 25;
+            this.TenCB_col.Name = "TenCB_col";
+            this.TenCB_col.Width = 94;
             // 
             // NgaySD
             // 
@@ -228,8 +239,9 @@ namespace VKTB
             "4",
             "5",
             "6"});
-            this.cb_CaSD.Size = new System.Drawing.Size(125, 22);
+            this.cb_CaSD.Size = new System.Drawing.Size(166, 22);
             this.cb_CaSD.TabIndex = 8;
+            this.cb_CaSD.SelectedIndexChanged += new System.EventHandler(this.cb_CaSD_SelectedIndexChanged);
             // 
             // labelControl5
             // 
@@ -260,13 +272,6 @@ namespace VKTB
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Cán bộ PT";
             // 
-            // txt_CBPT
-            // 
-            this.txt_CBPT.Location = new System.Drawing.Point(1440, 140);
-            this.txt_CBPT.Name = "txt_CBPT";
-            this.txt_CBPT.Size = new System.Drawing.Size(166, 23);
-            this.txt_CBPT.TabIndex = 12;
-            // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -285,54 +290,67 @@ namespace VKTB
             this.txt_NoiDung.Size = new System.Drawing.Size(523, 72);
             this.txt_NoiDung.TabIndex = 14;
             // 
-            // button1
+            // btnSua
             // 
-            this.button1.Location = new System.Drawing.Point(1083, 406);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 41);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSua.Location = new System.Drawing.Point(1083, 406);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(81, 41);
+            this.btnSua.TabIndex = 15;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // button2
+            // btnHuy
             // 
-            this.button2.Location = new System.Drawing.Point(1525, 406);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 42);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnHuy.Location = new System.Drawing.Point(1525, 406);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(81, 42);
+            this.btnHuy.TabIndex = 16;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // button3
+            // btnXacNhan
             // 
-            this.button3.Location = new System.Drawing.Point(1378, 408);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 41);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Location = new System.Drawing.Point(1378, 408);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(81, 41);
+            this.btnXacNhan.TabIndex = 17;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
-            // button4
+            // btnXoa
             // 
-            this.button4.Location = new System.Drawing.Point(1234, 406);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(81, 41);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnXoa.Location = new System.Drawing.Point(1234, 406);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(81, 41);
+            this.btnXoa.TabIndex = 18;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // cb_CBPT
+            // 
+            this.cb_CBPT.Location = new System.Drawing.Point(1440, 137);
+            this.cb_CBPT.Name = "cb_CBPT";
+            this.cb_CBPT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cb_CBPT.Size = new System.Drawing.Size(166, 22);
+            this.cb_CBPT.TabIndex = 19;
             // 
             // QLSuDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1708, 622);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cb_CBPT);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnXacNhan);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.txt_NoiDung);
             this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.txt_CBPT);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.cb_edit_Phong);
             this.Controls.Add(this.labelControl5);
@@ -355,6 +373,7 @@ namespace VKTB
             ((System.ComponentModel.ISupportInitialize)(this.cb_Phong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_CaSD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_edit_Phong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_CBPT.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,12 +399,13 @@ namespace VKTB
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.ComboBoxEdit cb_edit_Phong;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private System.Windows.Forms.TextBox txt_CBPT;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private System.Windows.Forms.TextBox txt_NoiDung;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnXacNhan;
+        private System.Windows.Forms.Button btnXoa;
+        private DevExpress.XtraEditors.ComboBoxEdit cb_CBPT;
+        public DevExpress.XtraGrid.Columns.GridColumn TenCB_col;
     }
 }

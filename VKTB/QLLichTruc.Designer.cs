@@ -29,6 +29,7 @@ namespace VKTB
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.DsLichTruc = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -38,13 +39,14 @@ namespace VKTB
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupCBTruc = new System.Windows.Forms.GroupBox();
             this.txtChucVuTruc = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.TxtTenCBTruc = new System.Windows.Forms.TextBox();
+            this.CmbHoTenCbTruc = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtMaCBTruc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupCBBanGiao = new System.Windows.Forms.GroupBox();
             this.txtChucVuBanGiao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,7 +63,12 @@ namespace VKTB
             this.label6 = new System.Windows.Forms.Label();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSuaLichTruc = new DevExpress.XtraEditors.SimpleButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtpNgayTruc = new System.Windows.Forms.DateTimePicker();
+            this.cmbMaPhong = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnBanGiao = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.DsLichTruc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupCBTruc.SuspendLayout();
@@ -71,11 +78,13 @@ namespace VKTB
             // 
             // DsLichTruc
             // 
-            this.DsLichTruc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DsLichTruc.Location = new System.Drawing.Point(0, 0);
+            gridLevelNode1.RelationName = "Level1";
+            this.DsLichTruc.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.DsLichTruc.Location = new System.Drawing.Point(250, 12);
             this.DsLichTruc.MainView = this.gridView1;
             this.DsLichTruc.Name = "DsLichTruc";
-            this.DsLichTruc.Size = new System.Drawing.Size(1813, 414);
+            this.DsLichTruc.Size = new System.Drawing.Size(1119, 414);
             this.DsLichTruc.TabIndex = 4;
             this.DsLichTruc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -105,9 +114,10 @@ namespace VKTB
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsColumn.AllowFocus = false;
+            this.gridColumn1.OptionsColumn.FixedWidth = true;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 94;
+            this.gridColumn1.Width = 35;
             // 
             // gridColumn2
             // 
@@ -117,9 +127,10 @@ namespace VKTB
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsColumn.AllowFocus = false;
+            this.gridColumn2.OptionsColumn.FixedWidth = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 94;
+            this.gridColumn2.Width = 35;
             // 
             // gridColumn3
             // 
@@ -129,9 +140,10 @@ namespace VKTB
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsColumn.AllowFocus = false;
+            this.gridColumn3.OptionsColumn.FixedWidth = true;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 94;
+            this.gridColumn3.Width = 50;
             // 
             // gridColumn4
             // 
@@ -141,9 +153,10 @@ namespace VKTB
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.AllowFocus = false;
+            this.gridColumn4.OptionsColumn.FixedWidth = true;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 94;
+            this.gridColumn4.Width = 50;
             // 
             // gridColumn5
             // 
@@ -153,9 +166,8 @@ namespace VKTB
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsColumn.AllowFocus = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 94;
+            this.gridColumn5.OptionsColumn.FixedWidth = true;
+            this.gridColumn5.Width = 50;
             // 
             // gridColumn6
             // 
@@ -165,9 +177,10 @@ namespace VKTB
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.OptionsColumn.AllowFocus = false;
+            this.gridColumn6.OptionsColumn.FixedWidth = true;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 94;
+            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.Width = 50;
             // 
             // gridColumn7
             // 
@@ -175,16 +188,30 @@ namespace VKTB
             this.gridColumn7.FieldName = "GhiChu";
             this.gridColumn7.MinWidth = 25;
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.FixedWidth = true;
             this.gridColumn7.Width = 94;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Phòng Trực";
+            this.gridColumn8.FieldName = "MaPhong";
+            this.gridColumn8.MinWidth = 25;
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
+            this.gridColumn8.OptionsColumn.AllowFocus = false;
+            this.gridColumn8.OptionsColumn.FixedWidth = true;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 5;
+            this.gridColumn8.Width = 35;
             // 
             // groupCBTruc
             // 
             this.groupCBTruc.Controls.Add(this.txtChucVuTruc);
             this.groupCBTruc.Controls.Add(this.label10);
-            this.groupCBTruc.Controls.Add(this.TxtTenCBTruc);
+            this.groupCBTruc.Controls.Add(this.CmbHoTenCbTruc);
+            this.groupCBTruc.Controls.Add(this.label9);
             this.groupCBTruc.Controls.Add(this.txtMaCBTruc);
             this.groupCBTruc.Controls.Add(this.label7);
-            this.groupCBTruc.Controls.Add(this.label8);
             this.groupCBTruc.Location = new System.Drawing.Point(25, 485);
             this.groupCBTruc.Name = "groupCBTruc";
             this.groupCBTruc.Size = new System.Drawing.Size(339, 226);
@@ -208,12 +235,23 @@ namespace VKTB
             this.label10.TabIndex = 14;
             this.label10.Text = "Chức Vụ : ";
             // 
-            // TxtTenCBTruc
+            // CmbHoTenCbTruc
             // 
-            this.TxtTenCBTruc.Location = new System.Drawing.Point(140, 96);
-            this.TxtTenCBTruc.Name = "TxtTenCBTruc";
-            this.TxtTenCBTruc.Size = new System.Drawing.Size(150, 23);
-            this.TxtTenCBTruc.TabIndex = 12;
+            this.CmbHoTenCbTruc.FormattingEnabled = true;
+            this.CmbHoTenCbTruc.Location = new System.Drawing.Point(140, 89);
+            this.CmbHoTenCbTruc.Name = "CmbHoTenCbTruc";
+            this.CmbHoTenCbTruc.Size = new System.Drawing.Size(150, 24);
+            this.CmbHoTenCbTruc.TabIndex = 26;
+            this.CmbHoTenCbTruc.SelectionChangeCommitted += new System.EventHandler(this.CmbHoTenCbTruc_SelectionChangeCommitted);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(33, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 17);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Họ Tên : ";
             // 
             // txtMaCBTruc
             // 
@@ -230,15 +268,6 @@ namespace VKTB
             this.label7.Size = new System.Drawing.Size(86, 17);
             this.label7.TabIndex = 8;
             this.label7.Text = "Mã Cán Bộ : ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 96);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 17);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Họ Tên : ";
             // 
             // groupCBBanGiao
             // 
@@ -368,35 +397,87 @@ namespace VKTB
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(1015, 682);
+            this.txtGhiChu.Location = new System.Drawing.Point(991, 682);
+            this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(254, 23);
+            this.txtGhiChu.Size = new System.Drawing.Size(347, 62);
             this.txtGhiChu.TabIndex = 18;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(904, 682);
+            this.label5.Location = new System.Drawing.Point(880, 698);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 17);
             this.label5.TabIndex = 19;
             this.label5.Text = "Ghi Chú : ";
             // 
-            // gridColumn8
+            // btnSuaLichTruc
             // 
-            this.gridColumn8.Caption = "Phòng Trực";
-            this.gridColumn8.FieldName = "MaPhong";
-            this.gridColumn8.MinWidth = 25;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
-            this.gridColumn8.Width = 94;
+            this.btnSuaLichTruc.Location = new System.Drawing.Point(910, 449);
+            this.btnSuaLichTruc.Name = "btnSuaLichTruc";
+            this.btnSuaLichTruc.Size = new System.Drawing.Size(112, 63);
+            this.btnSuaLichTruc.TabIndex = 24;
+            this.btnSuaLichTruc.Text = "Sửa Lịch Trực";
+            this.btnSuaLichTruc.Click += new System.EventHandler(this.btnSuaLichTruc_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(842, 624);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 17);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Thời Gian Trực";
+            // 
+            // dtpNgayTruc
+            // 
+            this.dtpNgayTruc.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayTruc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayTruc.Location = new System.Drawing.Point(991, 619);
+            this.dtpNgayTruc.Name = "dtpNgayTruc";
+            this.dtpNgayTruc.Size = new System.Drawing.Size(199, 23);
+            this.dtpNgayTruc.TabIndex = 27;
+            // 
+            // cmbMaPhong
+            // 
+            this.cmbMaPhong.FormattingEnabled = true;
+            this.cmbMaPhong.Location = new System.Drawing.Point(997, 562);
+            this.cmbMaPhong.Name = "cmbMaPhong";
+            this.cmbMaPhong.Size = new System.Drawing.Size(193, 24);
+            this.cmbMaPhong.TabIndex = 29;
+            this.cmbMaPhong.Click += new System.EventHandler(this.cmbMaPhong_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(863, 562);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 17);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Phòng : ";
+            // 
+            // btnBanGiao
+            // 
+            this.btnBanGiao.Enabled = false;
+            this.btnBanGiao.Location = new System.Drawing.Point(1112, 449);
+            this.btnBanGiao.Name = "btnBanGiao";
+            this.btnBanGiao.Size = new System.Drawing.Size(112, 63);
+            this.btnBanGiao.TabIndex = 31;
+            this.btnBanGiao.Text = "Bàn Giao Lịch";
+            this.btnBanGiao.Click += new System.EventHandler(this.btnBanGiao_Click);
             // 
             // QLLichTruc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1813, 772);
+            this.Controls.Add(this.btnBanGiao);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cmbMaPhong);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.dtpNgayTruc);
+            this.Controls.Add(this.btnSuaLichTruc);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtGhiChu);
             this.Controls.Add(this.groupCBPhanCong);
@@ -432,10 +513,8 @@ namespace VKTB
         private System.Windows.Forms.GroupBox groupCBTruc;
         private System.Windows.Forms.TextBox txtChucVuTruc;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox TxtTenCBTruc;
         private System.Windows.Forms.TextBox txtMaCBTruc;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupCBBanGiao;
         private System.Windows.Forms.TextBox txtChucVuBanGiao;
         private System.Windows.Forms.Label label1;
@@ -454,5 +533,13 @@ namespace VKTB
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraEditors.SimpleButton btnSuaLichTruc;
+        private System.Windows.Forms.ComboBox CmbHoTenCbTruc;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtpNgayTruc;
+        private System.Windows.Forms.ComboBox cmbMaPhong;
+        private System.Windows.Forms.Label label8;
+        private DevExpress.XtraEditors.SimpleButton btnBanGiao;
     }
 }

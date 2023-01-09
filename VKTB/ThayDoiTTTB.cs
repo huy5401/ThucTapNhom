@@ -66,7 +66,9 @@ namespace VKTB
             cmbLoaiTB.DataSource = D_QuanLyTB.LayLoaiTB();
             cmbLoaiTB.DisplayMember = "TenTT";
             cmbLoaiTB.ValueMember = "MaTT";
+            txt_ghichu.Text = QuanLyTB.GhiChu;
             txtTen.Text = QuanLyTB.TenTB;
+            
         }
 
         private void btnCN_Click(object sender, EventArgs e)

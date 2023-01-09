@@ -14,15 +14,15 @@ namespace VKTB
 {
     public partial class frmRibbonForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-     
+
         public frmRibbonForm()
         {
             InitializeComponent();
         }
-        
+
         private void frmRibbonForm_Load(object sender, EventArgs e)
         {
-         
+
 
         }
 
@@ -39,8 +39,8 @@ namespace VKTB
             Form f = (Form)Activator.CreateInstance(typeForm);
             f.MdiParent = this;
             f.Show();
-           
-    }
+
+        }
 
         private void btnTinhTrang_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -75,6 +75,30 @@ namespace VKTB
         private void btnXemLichSD_ItemClick(object sender, ItemClickEventArgs e)
         {
             OpenForm(typeof(QLSuDung));
+        }
+
+        private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(LenLichSD));
+        }
+
+
+        private void btnViPham_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(NhapTB));
+        }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(QuanLyTK_CBBM));
+
+            
+        }
+
+        private void barButtonItem15_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(TaoTaiKhoan));
+
         }
     }
 }
