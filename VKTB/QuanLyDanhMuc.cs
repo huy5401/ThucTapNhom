@@ -26,7 +26,15 @@ namespace VKTB
         {
             DanhMucVK.DataSource = D_QuanLyTB.LayDanhMucTB();
             DataTable dt = new DataTable();
-            btnThemDanhMuc.Enabled = true;
+            if (DangNhap.Quyen == "0")
+            {
+                btnThemDanhMuc.Enabled = true;
+            }
+            else
+            {
+                btnThemDanhMuc.Enabled = false;
+            }
+            
         }
               
 
