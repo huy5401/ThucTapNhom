@@ -54,11 +54,12 @@ namespace VKTB
 
         private void btnQuanLyCB_ItemClick(object sender, ItemClickEventArgs e)
         {
+            
             OpenForm(typeof(QLCanBo));
         }
 
         private void btnXemLichTruc_ItemClick(object sender, ItemClickEventArgs e)
-        {
+        {            
             OpenForm(typeof(QLLichTruc));
         }
 

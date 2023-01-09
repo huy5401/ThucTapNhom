@@ -80,11 +80,23 @@
     <Compile Include="frmRibbonForm.Designer.cs">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoVien.Designer.cs">
+      <DependentUpon>GiaoVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhapTB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhapTB.designer.cs">
       <DependentUpon>NhapTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoTaiKhoan.designer.cs">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="ThayDoiQuyen.cs">
       <SubType>Form</SubType>
@@ -110,23 +122,11 @@
     <Compile Include="QuanLyTK_CBBM.designer.cs">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
     </Compile>
-    <Compile Include="TaoTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TaoTaiKhoan.Designer.cs">
-      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
-    </Compile>
     <Compile Include="LenLichSD.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LenLichSD.Designer.cs">
       <DependentUpon>LenLichSD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TaoTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TaoTaiKhoan.Designer.cs">
-      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="ThayDoiTTTB.cs">
       <SubType>Form</SubType>
@@ -202,11 +202,23 @@
     <Compile Include="ThemTK.Designer.cs">
       <DependentUpon>ThemTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="TongTinCN_GV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TongTinCN_GV.Designer.cs">
+      <DependentUpon>TongTinCN_GV.cs</DependentUpon>
+    </Compile>
     <Compile Include="XacNhanCanBoBanGiao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="XacNhanCanBoBanGiao.Designer.cs">
       <DependentUpon>XacNhanCanBoBanGiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XemLichSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemLichSD.Designer.cs">
+      <DependentUpon>XemLichSD.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BanGiaoLichTruc.resx">
       <DependentUpon>BanGiaoLichTruc.cs</DependentUpon>
@@ -217,8 +229,14 @@
     <EmbeddedResource Include="frmRibbonForm.resx">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiaoVien.resx">
+      <DependentUpon>GiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhapTB.resx">
       <DependentUpon>NhapTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaoTaiKhoan.resx">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThayDoiQuyen.resx">
       <DependentUpon>ThayDoiQuyen.cs</DependentUpon>
@@ -231,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyTK_CBBM.resx">
       <DependentUpon>QuanLyTK_CBBM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TaoTaiKhoan.resx">
-      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LenLichSD.resx">
       <DependentUpon>LenLichSD.cs</DependentUpon>
@@ -284,8 +299,14 @@
     <EmbeddedResource Include="ThemTK.resx">
       <DependentUpon>ThemTK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TongTinCN_GV.resx">
+      <DependentUpon>TongTinCN_GV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XacNhanCanBoBanGiao.resx">
       <DependentUpon>XacNhanCanBoBanGiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemLichSD.resx">
+      <DependentUpon>XemLichSD.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -100,7 +100,7 @@ namespace VKTB
             this.Controls.Add(this.label1);
             this.Name = "ThemNCC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NhapVuKhi";
+            this.Text = "Thêm nhà cung cấp";
             this.Load += new System.EventHandler(this.NhapVuKhi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

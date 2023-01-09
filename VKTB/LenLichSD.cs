@@ -25,7 +25,7 @@ namespace VKTB
         {
             cb_CBPT.Properties.Items.Clear();
             DataTable dt = new DataTable();
-            dt = D_QLSuDung.LayDSCbptChuaSD(NgaySD.Text,cb_CaSD.Text);
+            dt = D_QLSuDung.LayDSCbptChuaSD(NgaySD.Text,cb_CaSD.Text,DangNhap.MaBM);
             foreach (DataRow row in dt.Rows)
             {
                 cb_CBPT.Properties.Items.Add(row["MaCB"] + " - " + row["TenCB"]);
@@ -40,7 +40,7 @@ namespace VKTB
         {
             cb_Phong.Properties.Items.Clear();
             DataTable dt = new DataTable();
-            dt = D_QLSuDung.LayDSPhong("BM01");
+            dt = D_QLSuDung.LayDSPhong(DangNhap.MaBM);
             foreach (DataRow row in dt.Rows)
             {
                 cb_Phong.Properties.Items.Add(row["MaPhong"]);
