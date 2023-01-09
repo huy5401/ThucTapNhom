@@ -42,5 +42,10 @@ namespace VKTB
         {
             OpenForm(typeof(QLLichTruc));
         }
+
+        private void btn_QLSDung_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(XemLichSD));
+        }
     }
 }

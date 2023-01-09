@@ -105,6 +105,7 @@ namespace VKTB
             this.btn_QLSDung.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_QLSDung.ImageOptions.LargeImage")));
             this.btn_QLSDung.LargeWidth = 80;
             this.btn_QLSDung.Name = "btn_QLSDung";
+            this.btn_QLSDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_QLSDung_ItemClick);
             // 
             // barButtonItem4
             // 
