@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DAL;
 using System.IO;
+using System.Globalization;
 
 namespace VKTB
 {
@@ -49,6 +50,7 @@ namespace VKTB
         }
         void LoadDsTB()
         {
+            
             DsVuKhi.DataSource = D_QuanLyTB.DanhSachTB();
 
         }
@@ -57,8 +59,10 @@ namespace VKTB
         {
             DataRow hang = gridView1.GetFocusedDataRow();
             string MaTB = hang["MaTB"].ToString();
-            
-            dt1 = D_QuanLyTB.LayThongTinTB(MaTB);
+            string tgbd = hang["TGBatDau"].ToString();
+            //DateTime TG = DateTime.ParseExact(tgbd, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime TG = DateTime.Parse(tgbd);
+            dt1 = D_QuanLyTB.LayThongTinTB(MaTB, TG);
             txtMaTB.Text = dt1.Rows[0][0].ToString();
             txtTenTB.Text = dt1.Rows[0][1].ToString();
             txtPhong.Text = dt1.Rows[0][4].ToString();
@@ -74,6 +78,7 @@ namespace VKTB
             btnCapNhat.Enabled = true;
             //btnNhap.Enabled = true;
             btnThanhLy.Enabled = true;
+            btnLSTT.Enabled = true;
             //DataRow hang = gridView1.GetFocusedDataRow();
             //String MaVK = hang["MaVK"].ToString();         
             //string TinhTang = hang["TinhTrangMuon"].ToString();
@@ -237,6 +242,19 @@ namespace VKTB
         {
             D_QuanLyTB.ThanhLyTB(txtMaTB.Text);
             MessageBox.Show("Thanh lý thành công");
+            LoadDsTB();
+        }
+
+        private void btnLSTT_Click(object sender, EventArgs e)
+        {
+            btnReturn.Visible = true;
+            btnReturn.Enabled = true;
+            DsVuKhi.DataSource = D_QuanLyTB.LichSuTT(txtMaTB.Text);
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            
             LoadDsTB();
         }
         //void OpenForm(Type typeForm)

@@ -39,6 +39,8 @@ namespace VKTB
             this.NgayXuat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaCB = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TGKetThuc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TGBatDau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,6 +64,8 @@ namespace VKTB
             this.label13 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.btnThanhLy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLSTT = new DevExpress.XtraEditors.SimpleButton();
+            this.btnReturn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.DsVuKhi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupHVSDVK.SuspendLayout();
@@ -91,7 +95,9 @@ namespace VKTB
             this.ngay,
             this.NgayXuat,
             this.MaCB,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.TGKetThuc,
+            this.TGBatDau});
             this.gridView1.GridControl = this.DsVuKhi;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -189,6 +195,26 @@ namespace VKTB
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 5;
             this.gridColumn3.Width = 94;
+            // 
+            // TGKetThuc
+            // 
+            this.TGKetThuc.Caption = "Thời gian kết thúc";
+            this.TGKetThuc.FieldName = "TGKetThuc";
+            this.TGKetThuc.MinWidth = 25;
+            this.TGKetThuc.Name = "TGKetThuc";
+            this.TGKetThuc.Visible = true;
+            this.TGKetThuc.VisibleIndex = 7;
+            this.TGKetThuc.Width = 94;
+            // 
+            // TGBatDau
+            // 
+            this.TGBatDau.Caption = "Thời gian bắt đầu";
+            this.TGBatDau.FieldName = "TGBatDau";
+            this.TGBatDau.MinWidth = 25;
+            this.TGBatDau.Name = "TGBatDau";
+            this.TGBatDau.Visible = true;
+            this.TGBatDau.VisibleIndex = 6;
+            this.TGBatDau.Width = 94;
             // 
             // label1
             // 
@@ -323,7 +349,7 @@ namespace VKTB
             // 
             this.btnCapNhat.AccessibleName = "";
             this.btnCapNhat.Enabled = false;
-            this.btnCapNhat.Location = new System.Drawing.Point(472, 683);
+            this.btnCapNhat.Location = new System.Drawing.Point(430, 683);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(150, 48);
             this.btnCapNhat.TabIndex = 20;
@@ -397,12 +423,33 @@ namespace VKTB
             // btnThanhLy
             // 
             this.btnThanhLy.Enabled = false;
-            this.btnThanhLy.Location = new System.Drawing.Point(905, 683);
+            this.btnThanhLy.Location = new System.Drawing.Point(773, 683);
             this.btnThanhLy.Name = "btnThanhLy";
             this.btnThanhLy.Size = new System.Drawing.Size(150, 48);
             this.btnThanhLy.TabIndex = 24;
             this.btnThanhLy.Text = "Thanh lý";
             this.btnThanhLy.Click += new System.EventHandler(this.btnThanhLy_Click);
+            // 
+            // btnLSTT
+            // 
+            this.btnLSTT.Enabled = false;
+            this.btnLSTT.Location = new System.Drawing.Point(604, 683);
+            this.btnLSTT.Name = "btnLSTT";
+            this.btnLSTT.Size = new System.Drawing.Size(150, 48);
+            this.btnLSTT.TabIndex = 25;
+            this.btnLSTT.Text = "Lịch sử tình trạng";
+            this.btnLSTT.Click += new System.EventHandler(this.btnLSTT_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Enabled = false;
+            this.btnReturn.Location = new System.Drawing.Point(942, 683);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(150, 48);
+            this.btnReturn.TabIndex = 26;
+            this.btnReturn.Text = "Quay lại";
+            this.btnReturn.Visible = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // QuanLyTB
             // 
@@ -412,6 +459,8 @@ namespace VKTB
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1848, 766);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.btnLSTT);
             this.Controls.Add(this.btnThanhLy);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCapNhat);
@@ -424,7 +473,7 @@ namespace VKTB
             this.Controls.Add(this.DsVuKhi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "QuanLyTB";
-            this.Text = "Tìm Kiếm Vũ Khí";
+            this.Text = "Danh sách trang bị";
             this.Load += new System.EventHandler(this.QuanLyVKTB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DsVuKhi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -472,5 +521,9 @@ namespace VKTB
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txt_ghichu;
         private System.Windows.Forms.Label label10;
+        private DevExpress.XtraEditors.SimpleButton btnLSTT;
+        private DevExpress.XtraEditors.SimpleButton btnReturn;
+        private DevExpress.XtraGrid.Columns.GridColumn TGKetThuc;
+        private DevExpress.XtraGrid.Columns.GridColumn TGBatDau;
     }
 }

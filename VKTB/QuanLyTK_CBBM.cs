@@ -15,7 +15,8 @@ namespace VKTB
 {
     public partial class QuanLyTK_CBBM : DevExpress.XtraEditors.XtraForm
     {
-       public static string MaVk;
+       public static string MaTK;
+        public static string maCB;
         public QuanLyTK_CBBM()
         {
             InitializeComponent();
@@ -31,18 +32,26 @@ namespace VKTB
             private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             DataRow hang = gridView1.GetFocusedDataRow();
-            string maTK = hang["MaTK"].ToString();
+            MaTK = hang["MaTK"].ToString();
             DataTable dt1 = new DataTable();
-            dt1 = D_QuanLyTK.LayThongTinTK(maTK);
+            dt1 = D_QuanLyTK.LayThongTinTK(MaTK);
             txtTaiKhoan.Text = dt1.Rows[0][1].ToString();
             txtMatKhau.Text = dt1.Rows[0][2].ToString();
             txtMaCB.Text = dt1.Rows[0][4].ToString();
+            txtMaCB.Enabled = false;
             txtTenCB.Text = dt1.Rows[0][0].ToString();
+            txtTenCB.Enabled = false;
             txtQuyen.Text = dt1.Rows[0][3].ToString();
+            txtQuyen.Enabled = false;
             txtChucVu.Text = dt1.Rows[0][6].ToString();
+            txtChucVu.Enabled = false;
             txtSDT.Text = dt1.Rows[0][5].ToString();
+            txtSDT.Enabled = false;
             txtBoMon.Text = dt1.Rows[0][7].ToString();
+            txtBoMon.Enabled = false;
 
+            btnSuaTT.Enabled = true;
+            btnXoa.Enabled = true;
         }
 
         //private void btnChiTiet_Click(object sender, EventArgs e)
@@ -95,6 +104,30 @@ namespace VKTB
 
         private void QuanLyTK_CBBM_Load(object sender, EventArgs e)
         {
+            LoadDsTK();
+        }
+
+        private void btnSuaTT_Click(object sender, EventArgs e)
+        {
+            D_QuanLyTK.ThayTK(MaTK, txtTaiKhoan.Text, txtMatKhau.Text);
+            MessageBox.Show("Thay đổi thông tin thành công");
+            LoadDsTK();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ThayDoiQuyen td1 = new ThayDoiQuyen();
+            td1.ShowDialog();
+            txtQuyen.Text = ThayDoiQuyen.Quyen;
+            LoadDsTK();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            maCB = txtMaCB.Text;
+            SuaThongTinCB.fcheck = 1;
+            SuaThongTinCB sd1 = new SuaThongTinCB();
+            sd1.ShowDialog();
             LoadDsTK();
         }
         //void OpenForm(Type typeForm)

@@ -19,5 +19,24 @@ namespace DAL
             string sql = @"LayTT_TK @MaTK ";
             return Dataprovider.ExecuteQuery(sql, new object[] { maTK });
         }
+
+        public static DataTable LayQuyen()
+        {
+            string sql = @"select Quyen
+                            from TAIKHOAN";
+            return Dataprovider.ExecuteQuery(sql);
+        }
+
+        public static void ThayDoiQuyen(string maTK, string Quyen)
+        {
+            string sql = @"ThayDoiQuyenTK @Quyen , @maTK";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { Quyen, maTK });
+        }
+
+        public static void ThayTK(string maTK, string tk, string mk)
+        {
+            string sql = @"ThayDoiTK  @maTK , @tk , @mk";
+            Dataprovider.ExecuteNonQuery(sql, new object[] { maTK, tk, mk });
+        }
     }
 }

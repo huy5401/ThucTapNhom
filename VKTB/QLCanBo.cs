@@ -53,6 +53,7 @@ namespace VKTB
 
         private void btnSuaCB_Click(object sender, EventArgs e)
         {
+            SuaThongTinCB.fcheck = 0;
             SuaThongTinCB suatt=new SuaThongTinCB();
             suatt.ShowDialog();
             loadThongTinCB();
